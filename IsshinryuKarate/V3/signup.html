@@ -219,9 +219,8 @@
 		if(!validateecAddress()){return false;}
 		if(!validateecAddress2()){return false;}
 		if(!validateecPhone()){return false;}
-		var isChecked=document.forms["signUp"]["Age"].checked;
+		var isChecked=document.forms["signUp"]["Minor"].checked;
 		if(isChecked==true){
-//			minorStatus(isChecked);
 			if(!validatepName()){return false;}
 			if(!validatepEmail()){return false;}
 			if(!validatepAddress()){return false;}
@@ -284,14 +283,14 @@
             <input name="Address" type="text" placeholder="Street Address"/><br /><br />
             <input name="Address2" type="text" placeholder="City, State, ZIP"/><br /><br />
             <input name="Phone" type="text" placeholder="Phone"/><br /><br />
-            <input name="vet" type="checkbox" />Check if you are a military veteran<br /><br />
+            <input name="Veteran" type="checkbox" />Check if you are a military veteran<br /><br />
             <h3>Emergency Contact</h3>
             <input name="ecName" type="text" placeholder="Name"/><br /><br />
             <input name="ecEmail" type="text" placeholder="Email"/><br /><br />
             <input name="ecAddress" type="text" placeholder="Street Address"/><br /><br />
             <input name="ecAddress2" type="text" placeholder="City, State, ZIP"/><br /><br />
             <input name="ecPhone" type="text" placeholder="Phone"/><br /><br />
-            <input name="Age" id="Age" type="checkbox" onclick="isMinor('reveal');"/>Check if you are under 18<br /><br />            
+            <input name="Minor" id="Age" type="checkbox" onclick="isMinor('reveal');"/>Check if you are under 18<br /><br />            
            <div id="reveal" style="display: none;">
             <h3>Parent/Guardian Info</h3>
             <p>Required if you are a minor</p>

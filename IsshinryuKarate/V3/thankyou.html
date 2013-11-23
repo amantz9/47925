@@ -19,11 +19,7 @@
 		}
 		return obj;
 	}
-	
-
-
 </script>
-
 </head>
 
 <!--Begin Header-->
@@ -69,7 +65,19 @@
           		<script type="text/javascript">
 					var $_GET=getFormData(location.href);
 					for(var name in $_GET){
-						document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+						if($_GET[name]=="on") {
+							$_GET[name]=$_GET[name].replace(/on/g, "yes");
+							document.write(name+": "+$_GET[name]+"<br />");
+						}
+						else if(name.match(/^ec/)){
+							ecName=name.replace(/^ec/g, "Emergency Contact ");
+							document.write(ecName+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+						}
+						else if(name.match(/^p/)){
+							pName=name.replace(/^p/g, "Parent/Guardian ");
+							document.write(pName+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+						}
+						else document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
 					}
 				</script>
 				</td></tr>
