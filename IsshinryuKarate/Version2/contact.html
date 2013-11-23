@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Isshinryu Karate - Contact Us</title>
+<link rel="stylesheet" type="text/css" href="isshinryuStyle.css" />
+
+<!--Input Validation-->
+<script type="text/javascript">
+	function validateName(){
+		var x=document.forms["contactUs"]["Name"].value;
+		var re = /^\s*[A-Za-z]{2,}\s+[A-Za-z]{2,}\s*$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter your first and last name.");
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateEmail(){
+		var x=document.forms["contactUs"]["Email"].value;
+		var re = /^[A-Za-z0-9]+\.?([A-Za-z0-9]+)?@(([A-Za-z0-9]+)?\.?)*[A-Za-z0-9]+\.[A-Za-z0-9]{2,3}$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter a valid email address.");
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateSubject(){
+		var x=document.forms["contactUs"]["Subject"].value;
+		if (x==null||x==""){
+			alert("Please enter a subject.");
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateMessage(){
+		var x=document.forms["contactUs"]["Message"].value;
+		if (x==null||x==""){
+			alert("Please enter your message.");
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateForm(){
+		if(!validateName())return false;
+		if(!validateEmail())return false;
+		if(!validateSubject())return false;
+		if(!validateMessage())return false;
+		else{
+			return true;
+		}
+	}
+</script>
+</head>
+
+<!--Begin Header-->
+    <table>
+      <tr>
+        <td width="440"><img src="images/isshinryuLogo.jpg" width="420" height="200" alt="Isshinryu Logo" />
+    </td>
+        <td align="center" style="vertical-align:middle;">
+        	<h2>760-568-0961</h2>
+            <p>68225 Ramon Road<br/>
+            Cathedral City, CA 92334</p>
+      	</td>
+      </tr>
+	</table>
+    <div class="nav">
+    <table>
+      <tr>
+        <td>
+        	<ul>
+            	<li><a href="home.html">Home</a></li>
+            	<li><a href="announcements.html">Announcements</a></li>
+            	<li><a href="blackBelts.html">Black Belt Profiles</a></li>
+            	<li><a href="terminology.html">Terminology</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+          	</ul>
+      	</td>
+      </tr>
+    </table>
+    </div>
+
+<!--End Header-->
+
+<!--Begin Main Content-->
+	<div class="form">
+    <table>
+        <tr>
+            <td>
+            <h1>Conact Us</h1>
+            <h3>Use the form below to email us or call<br />760-568-0961</h3>
+            <form name="contactUs" action="thankyou.html" onsubmit="return validateForm()" method="get" >
+            <input name="Name" type="text" placeholder="Name" size="50" /><br /><br />
+            <input name="Email" type="text" placeholder="Email" size="50" /><br /><br />
+            <input name="Subject" type="text" placeholder="Subject" size="50" /><br /><br />
+            <textarea name="Message"  placeholder="Type your message here" cols="50" rows="10"></textarea><br /><br />
+            <input type="reset" value="Reset"/>
+            <input type="submit" value="Submit"/>
+            </form>
+            </td>
+        </tr>
+    </table>
+    </div>
+    
+<!--Begin Footer-->
+	<div class="footer">
+    <table>
+        <td>
+        	<ul>
+            	<li><a href="home.html">Home</a></li>
+            <li><a href="announcements.html">Announcements</a></li>
+            <li><a href="blackBelts.html">Black Belt Profiles</a></li>
+            <li><a href="terminology.html">Terminology</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <p align="center">&copy; 2013 Isshinryu Karate 760-568-0961</p>
+      	</td>
+      </tr>
+  	</table>
+    </div>
+<!--End Footer-->
+
+</body>
+</html>

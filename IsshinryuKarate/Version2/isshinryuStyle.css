@@ -1,0 +1,113 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background-color:#000000;
+	font-family: Verdana, Geneva, sans-serif;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+table {
+	width: 70%;
+	min-width: 700px;
+	max-width: 1200px;
+	margin-left: 15%;
+	margin-right: 15%;
+	background-color:#EEEEEE;
+	padding-left:10px;
+	padding-right:10px;
+	border:1px solid #FF0000;
+}
+ul.nav{
+	list-style: none;
+}
+.nav table{
+	text-align: center;
+	line-height: .1em;
+}
+.nav li {
+	display: inline-block;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+.nav a {
+	display: inline-block;
+	text-decoration: none;
+}
+.main td {
+	vertical-align:top;
+}
+.main h2 {
+	text-align:center;
+}
+.main a {
+	text-decoration:none;
+}
+.blackbelt td {
+	vertical-align: middle;
+	padding: 20px;
+}
+.blackbelt h2 {
+	text-align: center;
+}
+.blackbelt tr {
+	padding-bottom: 30px;
+}
+.blackbelt td p {
+	padding-left: 20px;
+}
+.blackbelt a {
+	text-decoration: none;
+}
+.blackbelt img {
+	box-shadow: 5px 5px 5px #000000;
+}
+.terms td {
+	vertical-align: top;
+	padding-left: 20px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+}
+.terms td:nth-child(odd){
+	border-bottom: dashed 1px #666666;
+	vertical-align: middle;
+}
+.terms h2 {
+	text-align: center;
+}
+.terms a {
+	text-decoration: none;
+}
+.form table {
+	text-align: center;
+}
+.form td {
+	vertical-align: top;
+}
+.form #space {
+	line-height: .5em;
+}
+.form input[type="text"] {
+	width: 350px;
+}
+.footer table{
+	text-align: center;
+	line-height: .5em;
+}
+.footer li {
+	display: inline;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.footer a {
+	display: inline-block;
+	text-decoration: none;
+}
+.footer p {
+	font-size: .7em;
+}

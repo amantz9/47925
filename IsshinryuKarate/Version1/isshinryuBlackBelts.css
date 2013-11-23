@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background-color:#000000;
+}
+
+table{
+	background-color:#EEEEEE;
+	padding-left:10px;
+	padding-right:10px;
+	border:1px solid #FF0000;
+}
+
+td{
+	vertical-align:middle;
+	padding:20px;
+}
+
+h2{
+	text-align:center;
+}
+
+a{
+	text-decoration:none;
+}
+
+img{
+	box-shadow:5px 5px 5px #000000;
+}
