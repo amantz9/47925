@@ -5,6 +5,36 @@
 <title>Mantz Music Online Mixing</title>
 
 <link rel="stylesheet" type="text/css" href="mantzmusicstyle.css"/>
+<script type="text/javascript">
+
+	function validateName(){
+		var x=document.forms["onlineMixing"]["Name"].value;
+		var re = /^\s*[A-Za-z]{2,}\s+[A-Za-z]{2,}\s*$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter your first and last name.");
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	
+	function addOns(){
+		if(addons.vocalUp.isChecked=="true"){
+			var vocalUpQty=prompt("How many Vocal Up Mixes do you want? ");
+		}
+	}
+	
+	function validateForm(){
+		if(!validateName())return false;
+		if(!validateEmail())return false;
+		else{
+			return true;
+		}
+	}
+
+</script>
 
 </head>
 
@@ -71,15 +101,19 @@
     
     <!--Begin Payment Options-->
     	<td style="vertical-align:top; padding: 10px; background-color:#222;">
-        	<p><strong>The price for Online Mixing is $250 per song or $2300 for a 10 or more song album up to 80 minutes of music.</strong></p>
-            <p><em>Additional mix options are available including vocal-up, vocal-down, acapella, music only, stems, and "clean" version for $25 each per song.</em></p>
+        	<p><strong>The price for Online Mixing is $225 per song or $200 per song if submitting more than 10.</strong></p>
+            <p><em>Additional mix options are available including vocal-up, vocal-down, acapella, music only, stems, and "clean" version for $15 each per song.</em></p>
         	<br /><br />
 	<!--Online Mixing Form Goes Here-->
     	<table align="center">
-        	<tr><td colspan="2"><form action="/webformmailer.php" method="post" style="text-align:center;"><br />
-        	<input type="text" name="name" placeholder="Name" size="50"/><br /><br />
-            <input type="text" name="email" placeholder="Email" size="50" /><br /><br />
-            <input type="text" name="numOfSongs" placeholder="Number of Songs" size="50" /><br />
+        	<tr><td colspan="2">
+            <!--Formmailer from original site<form action="/webformmailer.php" method="post" style="text-align:center;"><br />-->
+            <form name="onlineMixing" action="submitted.html" onsubmit="return validateForm()" method="get" >
+            <input type="text" name="Artist Name" placeholder="Artist Name" size="50" /><br /><br />
+        	<input type="text" name="Name" placeholder="Contact Name" size="50"/><br /><br />
+            <input type="text" name="Email" placeholder="Email" size="50" /><br /><br />
+            <input type="text" name="Phone" placeholder="Phone" size="50" /><br /><br />
+            <input type="text" name="Number Of Songs" placeholder="Number of Songs" size="50" /><br />
             <tr><td style="text-align:left;">
             <p><strong>Add-ons</strong></p>
             <input type="checkbox" name="addons" value="vocalUP"/>Vocal Up<br />
