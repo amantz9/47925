@@ -7,12 +7,65 @@
 <link rel="stylesheet" type="text/css" href="mantzmusicstyle.css"/>
 <script type="text/javascript">
 
+	function validateArtistName(){
+		var x=document.forms["onlineMixing"]["ArtistName"].value;
+		var re = /^\s*[A-Za-z]+(\s[A-Za-z]*)*$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter the artist's name.");
+			document.forms["onlineMixing"]["ArtistName"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
 	function validateName(){
 		var x=document.forms["onlineMixing"]["Name"].value;
 		var re = /^\s*[A-Za-z]{2,}\s+[A-Za-z]{2,}\s*$/;
 		var m = re.exec(x);
 		if (m==null){
 			alert("Please enter your first and last name.");
+			document.forms["onlineMixing"]["Name"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateEmail(){
+		var x=document.forms["onlineMixing"]["Email"].value;
+		var re = /^[A-Za-z0-9]+\.?([A-Za-z0-9]+)?@(([A-Za-z0-9]+)?\.?)*[A-Za-z0-9]+\.[A-Za-z0-9]{2,3}$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter a valid email address.");
+			document.forms["onlineMixing"]["Email"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validatePhone(){
+		var x=document.forms["onlineMixing"]["Phone"].value;
+		var re = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter your phone number in the following format:\n 999-999-9999.");
+			document.forms["onlineMixing"]["Phone"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateSongs(){
+		var x=document.forms["onlineMixing"]["NumberOfSongs"].value;
+		var re = /^\d{1,3}$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter the number of songs you want mixed.");
+			document.forms.onlineMixing.NumberOfSongs.style.backgroundColor="#FFAAAA";
 			return false;
 		}
 		else{
@@ -20,15 +73,12 @@
 		}
 	}
 	
-	function addOns(){
-		if(addons.vocalUp.isChecked=="true"){
-			var vocalUpQty=prompt("How many Vocal Up Mixes do you want? ");
-		}
-	}
-	
 	function validateForm(){
+		if(!validateArtistName())return false;
 		if(!validateName())return false;
 		if(!validateEmail())return false;
+		if(!validatePhone())return false;
+		if(!validateSongs())return false;
 		else{
 			return true;
 		}
@@ -108,20 +158,27 @@
     	<table align="center">
         	<tr><td colspan="2">
             <!--Formmailer from original site<form action="/webformmailer.php" method="post" style="text-align:center;"><br />-->
-            <form name="onlineMixing" action="submitted.html" onsubmit="return validateForm()" method="get" >
-            <input type="text" name="Artist Name" placeholder="Artist Name" size="50" /><br /><br />
-        	<input type="text" name="Name" placeholder="Contact Name" size="50"/><br /><br />
-            <input type="text" name="Email" placeholder="Email" size="50" /><br /><br />
-            <input type="text" name="Phone" placeholder="Phone" size="50" /><br /><br />
-            <input type="text" name="Number Of Songs" placeholder="Number of Songs" size="50" /><br />
+            <form name="onlineMixing" action="thankyou.html" onsubmit="return validateForm()" method="get" >
+            <input type="text" name="ArtistName" placeholder="Artist Name" size="50" onclick="document.forms.onlineMixing.ArtistName.style.backgroundColor='white'"/><br /><br />
+        	<input type="text" name="Name" placeholder="Contact Name" size="50" onclick="document.forms.onlineMixing.Name.style.backgroundColor='white'"/><br /><br />
+            <input type="text" name="Email" placeholder="Email" size="50" onclick="document.forms.onlineMixing.Email.style.backgroundColor='white'"/><br /><br />
+            <input type="text" name="Phone" placeholder="Phone" size="50" onclick="document.forms.onlineMixing.Phone.style.backgroundColor='white'" /><br /><br />
+            <input type="text" name="NumberOfSongs" placeholder="Number of Songs" size="50" onclick="document.forms.onlineMixing.NumberOfSongs.style.backgroundColor='white'" /><br />
             <tr><td style="text-align:left;">
             <p><strong>Add-ons</strong></p>
-            <input type="checkbox" name="addons" value="vocalUP"/>Vocal Up<br />
+<!--            <input type="checkbox" name="addons" value="vocalUP" onclick="yesVocalUp()"/>Vocal Up<br />
             <input type="checkbox" name="addons" value="vocalDn"/>Vocal Down<br />
             <input type="checkbox" name="addons" value="acapella"/>Acapella<br />
             <input type="checkbox" name="addons" value="musicOnly"/>Music Only<br />
             <input type="checkbox" name="addons" value="stems"/>Stems<br />
-            <input type="checkbox" name="addons" value="clean"/>Clean Version<br />
+            <input type="checkbox" name="addons" value="clean"/>Clean Version<br />	-->
+            <div style="text-align: right;">
+            Vocal Up<input type="text" name="vocalUp" placholder=0; size="1" /><br />
+            Vocal Down<input type="text" name="vocalDown" placholder=0; size="1" /><br />
+            Acapella<input type="text" name="acapella" placholder=0; size="1" /><br />
+            Music Only<input type="text" name="musicOnly" placholder=0; size="1" /><br />
+            Clean Version<input type="text" name="clean" placholder=0; size="1" /><br />
+            </div>
             </td>
             <td>
 			<br />

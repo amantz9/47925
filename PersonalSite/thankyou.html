@@ -54,9 +54,49 @@
           <br /><br />
         
 		<script type="text/javascript">
+			var addOnPrice = 15;
+			var tot=0;
 			var $_GET=getFormData(location.href);
 			for(var name in $_GET){
-				document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+				if(name=="NumberOfSongs"){
+					if($_GET[name]>=10){
+						var songPrice=200;
+					}
+					else songPrice=225;
+					var songTot=($_GET[name]*songPrice);
+					tot=tot+songTot;
+					document.write("Number of Songs x "+$_GET[name]+" = $"+songTot+"<br />");
+				}
+				else if(name=="vocalUp"){
+					var vuPrice=($_GET[name]*addOnPrice)
+					document.write("Vocal Up x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+vuPrice+"<br />");
+					tot=tot+vuPrice;
+				}
+				else if(name=="vocalDown"){
+					var vdPrice=($_GET[name]*addOnPrice)
+					document.write("Vocal Down x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+vdPrice+"<br />");
+					tot=tot+vdPrice;
+				}
+				else if(name=="acapella"){
+					var acaPrice=($_GET[name]*addOnPrice)
+					document.write("Acapella x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+acaPrice+"<br />");
+					tot=tot+acaPrice;
+				}
+				else if(name=="musicOnly"){
+					var moPrice=($_GET[name]*addOnPrice)
+					document.write("Music Only x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+moPrice+"<br />");
+					tot=tot+moPrice;
+				}
+				else if(name=="clean"){
+					var clPrice=($_GET[name]*addOnPrice)
+					document.write("Clean Version x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+clPrice+"<br />");
+					tot=tot+clPrice;
+				}
+				else if(name=="comments"){
+					document.write("Your total is $"+tot+"<br /><br />");
+					document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+				}
+				else document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
 			}
 		</script>
         <br /><br />
