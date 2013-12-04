@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Anthony Mantz Survey Site</title>
+
+<script type="text/javascript">
+	function getQuestion(qNum) {
+		var q = new Array();
+		q[0] = "Can you see this?";
+		q[1] = "How about now?";
+		i=qNum;
+		return q[i];		
+	}
+	function getAnswerSet(qNum) {
+		var a = new Array();
+		i=qNum;
+		a[0] = '<input type="radio" name="answer" value="yes" />Yes<br /><input type="radio" name="answer" value="no" />No<br />';
+		a[1] = '<input type="radio" name="answer" value="no" />No<br /><input type="radio" name="answer" value="yes" />Yes<br />'
+		return a[i];
+	}
+</script>
+
+</head>
+
+<body>
+	<script type="text/javascript">
+		for (qNum=0;qNum<2;qNum++){
+			var question = getQuestion(qNum);
+			document.write('<p>Question # ' + (qNum + 1) + '</p>');
+			document.write(question + "<br />");
+			document.write('<form action=" " name='+qNum+' >');
+			var answers = getAnswerSet(qNum);
+			document.write(answers)
+			document.write('<input type="submit" name="submit" value="Next" />');
+			document.write('</form>');
+		}
+		
+
+
+    </script>
+</body>
+</html>
