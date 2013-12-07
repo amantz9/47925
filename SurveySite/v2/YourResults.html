@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Your Results</title>
+
+<script type="text/javascript">
+//Collect the data submitted on the form
+	function getFormData(url){
+		var data=url.split("?");
+		var nvPairs=data[1].split("&");
+		var obj=new Object();
+		for(var i=0;i<nvPairs.length;i++) {
+			var map=nvPairs[i].split("=");
+			var name=map[0];
+			var value=map[1];
+			obj[name]=value;
+		}
+		return obj;
+	}
+	
+function getCookies() {
+    var cookies = {}; // The object we will return
+    var all = document.cookie; // Get all cookies in one big string
+    if (all === "") // If the property is the empty string
+        return cookies; // return an empty object
+    var list = all.split("; "); // Split into individual name=value pairs
+    for(var i = 0; i < list.length; i++) { // For each cookie
+        var cookie = list[i];
+        var p = cookie.indexOf("="); // Find the first = sign
+        var name = cookie.substring(0,p); // Get cookie name
+        var value = cookie.substring(p+1); // Get cookie value
+        value = decodeURIComponent(value); // Decode the value
+        cookies[name] = value; // Store name and value in object
+    }
+    return cookies;
+}
+
+function setCookie(name, value, secondsToLive) {
+    var cookie = name + "=" + encodeURIComponent(value);
+    if (typeof daysToLive === "number")
+        cookie += "; max-age=" + (daysToLive);
+    document.cookie = cookie;
+}
+
+
+</script>
+
+</head>
+
+<body>
+	<script type="text/javascript">
+		var $_GET=getFormData(location.href);
+		for(var name in $_GET){
+			document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+		}
+		
+        //Place into the $_GET object
+    	//var $_GET=getFormInfo(location.href);
+        //Test JSON to stringify and parse back
+        var str=JSON.stringify($_GET);
+        //Test the Cookie class
+        var seconds=150;
+        //Set a cookieWith a function
+        setCookie("SurveyTake2", str, seconds);
+        //setCookie("SetAnother","This is just a test" , seconds);
+        //Retrieve all the cookies
+        cookiesObj=getCookies();
+        //document.write("</br> Display all the function cookies </br>");
+        for(var name in cookiesObj){
+                document.write(name+"="+cookiesObj[name]+"<br/>");
+        }
+		
+	</script>
+    <p><a href="OverallResults.html">Click to see compiled results</p>
+</body>
+</html>
