@@ -55,23 +55,19 @@ function setCookie(name, value, secondsToLive) {
 			document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
 		}
 		
-        //Place into the $_GET object
-    	//var $_GET=getFormInfo(location.href);
         //Test JSON to stringify and parse back
         var str=JSON.stringify($_GET);
         //Test the Cookie class
         var seconds=150;
         //Set a cookieWith a function
-        setCookie("SurveyTake2", str, seconds);
-        //setCookie("SetAnother","This is just a test" , seconds);
+        setCookie("SurveyTake1", str, seconds);
         //Retrieve all the cookies
-        cookiesObj=getCookies();
-        //document.write("</br> Display all the function cookies </br>");
-        for(var name in cookiesObj){
-                document.write(name+"="+cookiesObj[name]+"<br/>");
-        }
+//        cookiesObj=getCookies();
+//        for(var name in cookiesObj){
+//                document.write(name+"="+cookiesObj[name]+"<br/>");
+//        }
 		
 	</script>
-    <p><a href="OverallResults.html">Click to see compiled results</p>
+    <p><a href="OverallResults.html">Click to see compiled results</a></p>
 </body>
 </html>

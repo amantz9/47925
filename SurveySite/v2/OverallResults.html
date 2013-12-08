@@ -4,6 +4,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <script type="text/javascript">
+
+	/*function getFormData(url){
+		var data=url.split("?");
+		var nvPairs=data[1].split("&");
+		var obj=new Object();
+		for(var i=0;i<nvPairs.length;i++) {
+			var map=nvPairs[i].split("=");
+			var name=map[0];
+			var value=map[1];
+			obj[name]=value;
+		}
+		return obj;
+	}*/
+
+
 function getCookies() {
     var cookies = {}; // The object we will return
     var all = document.cookie; // Get all cookies in one big string
@@ -20,27 +35,30 @@ function getCookies() {
     }
     return cookies;
 }
+
 </script>
 </head>
 
 <body>
 <script type="text/javascript">
-var q1yes=0;
-var q1no=0;
+        cookiesObj=getCookies();
+        for(var name in cookiesObj){
+                document.write(name+"="+cookiesObj[name]+"<br/>");
+        }
+		var obj=JSON.parse(cookiesObj[name]);
+		for(var name in obj){
+			document.write(name+"="+obj[name]+"<br/>");
+		}
 
-cookiesObj=getCookies();
-for(var name in cookiesObj){
-	if(name="question1"){
-		if(cookiesObj[name]="yes"){
-			q1yes++;
-		}
-		else if(cookiesObj[name]="no"){
-			q1no++;
-		}
-		else{};
-	}
-}
-//alert("yes="+q1yes+" no="+q1no);
+	/*q1data=getCookies();
+		var obj=JSON.parse(q1data);
+	//Print the new object
+	document.write("</br> Display the JSON Object </br>");
+	for(var name in obj){
+		document.write(name+"="+obj[name]+"<br/>");
+	}*/
+
+
 </script>
 
 
