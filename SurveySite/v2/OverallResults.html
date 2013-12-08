@@ -5,20 +5,6 @@
 <title>Untitled Document</title>
 <script type="text/javascript">
 
-	/*function getFormData(url){
-		var data=url.split("?");
-		var nvPairs=data[1].split("&");
-		var obj=new Object();
-		for(var i=0;i<nvPairs.length;i++) {
-			var map=nvPairs[i].split("=");
-			var name=map[0];
-			var value=map[1];
-			obj[name]=value;
-		}
-		return obj;
-	}*/
-
-
 function getCookies() {
     var cookies = {}; // The object we will return
     var all = document.cookie; // Get all cookies in one big string
@@ -41,23 +27,29 @@ function getCookies() {
 
 <body>
 <script type="text/javascript">
+	var q1yes=0, q1no=0;
+	var q2yes=0, q2no=0;
+	
         cookiesObj=getCookies();
         for(var name in cookiesObj){
-                document.write(name+"="+cookiesObj[name]+"<br/>");
-        }
-		var obj=JSON.parse(cookiesObj[name]);
-		for(var name in obj){
-			document.write(name+"="+obj[name]+"<br/>");
+			document.write(name+"="+cookiesObj[name]+"<br/>");//remove after testing
+			var obj=JSON.parse(cookiesObj[name]);
+			for(var name in obj){
+				if(name=="question1"){
+					if(obj[name]=="yes")q1yes++;
+					if(obj[name]=="no")q1no++;
+				}
+				if(name=="question2"){
+					if(obj[name]=="yes")q2yes++;
+					if(obj[name]=="no")q2no++;
+				}
+				document.write(name+"="+obj[name]+"<br/>");//remove after testing
+			}
 		}
-
-	/*q1data=getCookies();
-		var obj=JSON.parse(q1data);
-	//Print the new object
-	document.write("</br> Display the JSON Object </br>");
-	for(var name in obj){
-		document.write(name+"="+obj[name]+"<br/>");
-	}*/
-
+		document.write("<p>Question 1 Yes = "+q1yes+"</p>");
+		document.write("<p>Question 1 No = "+q1no+"</p>");
+		document.write("<p>Question 2 Yes = "+q2yes+"</p>");
+		document.write("<p>Question 2 No = "+q2no+"</p>");
 
 </script>
 
