@@ -2,11 +2,81 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Anthony Mantz's Form</title>
+
+<script type="text/javascript">
+
+//Cookie retrieval function (used on this page for username validation)
+function getCookies() {
+    var cookies = {}; 
+    var all = document.cookie; 
+    if (all === "") 
+        return cookies; 
+    var list = all.split("; "); 
+    for(var i = 0; i < list.length; i++) { 
+        var cookie = list[i];
+        var p = cookie.indexOf("="); 
+        var name = cookie.substring(0,p); 
+        var value = cookie.substring(p+1); 
+        value = decodeURIComponent(value); 
+        cookies[name] = value; 
+    }
+    return cookies;
+}
+
+
+//Checks to see if username is already used
+function valUser(){ 
+	//Retrieve and cycle through all cookies
+	cookiesObj=getCookies();
+	for(var name in cookiesObj){
+		var obj=JSON.parse(cookiesObj[name]);
+		for(var name in obj){
+			var un=document.forms["survey"]["uName"].value;
+			if(obj[name]==un){
+				alert("This name is taken, please enter a new username");
+				return false;
+			}
+		}
+	}
+	return true;
+
+}
+
+function valQ1(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question1");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	alert(isChecked);
+	if(!isChecked){
+		alert("Please answer question 1.")
+		return false;
+	}
+	else return true;
+}
+
+//Master form validation function
+function validateForm(){ 
+	if(!valUser())return false;
+	if(!valQ1())return false;
+	else{
+		return true;
+	}
+}
+
+</script>
+
 </head>
 
 <body>
-<form name="survey" action="YourResults.html" method="get">
+<!--Begin Form Content-->
+<form name="survey" action="YourResults.html" onsubmit="return validateForm()" method="get">
+<label>Please enter a new username:</label>
+<input name="uName" size="50" /><br />
 <h3>Question 1</h3>
 <label>Can you see this question?</label><br />
 <input type="radio" name="question1" value="yes" />Yes<br />
@@ -53,13 +123,14 @@
 <input type="checkbox" name="question8" value="taco" />Taco<br />
 <input type="checkbox" name="question8" value="shrimp" />Shrimp<br />
 <input type="checkbox" name="question8" value="none" />None of the Above<br />
-<h3>Question 9</h3>
-<label>What is your name?</label><br />
-<input name="question9" size="50" /><br />
+    <h3>Question 9</h3>
+    <label>What is your name?</label><br />
+    <input name="question9" size="50" /><br />
 <h3>Question 10</h3>
 <label>What city are you from?</label><br />
 <input name="question10" size="50" /><br />-->
 <input type="submit" name="submit" value="Next" />
+
 
 </body>
 </html>

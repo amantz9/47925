@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Survey Results</title>
 <script type="text/javascript">
 
 function getCookies() {
@@ -27,31 +27,39 @@ function getCookies() {
 
 <body>
 <script type="text/javascript">
+	//Counters for survey results
 	var q1yes=0, q1no=0;
 	var q2yes=0, q2no=0;
 	
-        cookiesObj=getCookies();
-        for(var name in cookiesObj){
-			document.write(name+"="+cookiesObj[name]+"<br/>");//remove after testing
-			var obj=JSON.parse(cookiesObj[name]);
-			for(var name in obj){
-				if(name=="question1"){
-					if(obj[name]=="yes")q1yes++;
-					if(obj[name]=="no")q1no++;
-				}
-				if(name=="question2"){
-					if(obj[name]=="yes")q2yes++;
-					if(obj[name]=="no")q2no++;
-				}
-				document.write(name+"="+obj[name]+"<br/>");//remove after testing
+	//Retrieve and cycle through all cookies
+	cookiesObj=getCookies();
+	for(var name in cookiesObj){
+		document.write(name+"="+cookiesObj[name]+"<br/>");//remove after testing
+		var obj=JSON.parse(cookiesObj[name]);
+		
+		//Rules for result counters
+		for(var name in obj){
+			if(name=="question1"){
+				if(obj[name]=="yes")q1yes++;
+				if(obj[name]=="no")q1no++;
 			}
+			if(name=="question2"){
+				if(obj[name]=="yes")q2yes++;
+				if(obj[name]=="no")q2no++;
+			}
+			else{};
+			//document.write(name+"="+obj[name]+"<br/>");//remove after testing
 		}
-		document.write("<p>Question 1 Yes = "+q1yes+"</p>");
-		document.write("<p>Question 1 No = "+q1no+"</p>");
-		document.write("<p>Question 2 Yes = "+q2yes+"</p>");
-		document.write("<p>Question 2 No = "+q2no+"</p>");
+	}
+	//Display the results
+	document.write("<p>Question 1 Yes = "+q1yes+"</p>");
+	document.write("<p>Question 1 No = "+q1no+"</p>");
+	document.write("<p>Question 2 Yes = "+q2yes+"</p>");
+	document.write("<p>Question 2 No = "+q2no+"</p>");
 
 </script>
+
+<p><a href="index.html">Take survey again</a></p>
 
 
 </body>
