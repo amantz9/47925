@@ -26,13 +26,18 @@ function getCookies() {
 
 
 //Checks to see if username is already used
-function valUser(){ 
+function valUser(){
+	var un=document.forms["survey"]["uName"].value;
+	if(un==""){
+		alert("Please enter a username")
+		return false;
+	}
 	//Retrieve and cycle through all cookies
 	cookiesObj=getCookies();
 	for(var name in cookiesObj){
 		var obj=JSON.parse(cookiesObj[name]);
 		for(var name in obj){
-			var un=document.forms["survey"]["uName"].value;
+			//var un=document.forms["survey"]["uName"].value;
 			if(obj[name]==un){
 				alert("This name is taken, please enter a new username");
 				return false;
@@ -42,7 +47,8 @@ function valUser(){
 	return true;
 
 }
-
+//Begin Survey validation function section
+//Radio Buttons
 function valQ1(){
 	var isChecked=false;
 	var radios=document.getElementsByName("question1");
@@ -51,9 +57,66 @@ function valQ1(){
 			isChecked=true;
 		}
 	}
-	alert(isChecked);
 	if(!isChecked){
 		alert("Please answer question 1.")
+		return false;
+	}
+	else return true;
+}
+function valQ2(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question2");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 2.")
+		return false;
+	}
+	else return true;
+}
+function valQ3(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question3");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 3.")
+		return false;
+	}
+	else return true;
+}
+
+function valQ4(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question4");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 4.")
+		return false;
+	}
+	else return true;
+}
+
+function valQ5(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question5");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 5.")
 		return false;
 	}
 	else return true;
@@ -63,6 +126,10 @@ function valQ1(){
 function validateForm(){ 
 	if(!valUser())return false;
 	if(!valQ1())return false;
+	if(!valQ2())return false;
+	if(!valQ3())return false;
+	if(!valQ4())return false;
+	if(!valQ5())return false;
 	else{
 		return true;
 	}
@@ -75,7 +142,7 @@ function validateForm(){
 <body>
 <!--Begin Form Content-->
 <form name="survey" action="YourResults.html" onsubmit="return validateForm()" method="get">
-<label>Please enter a new username:</label>
+<h3>Please enter a new username:</h3>
 <input name="uName" size="50" /><br />
 <h3>Question 1</h3>
 <label>Can you see this question?</label><br />
@@ -85,7 +152,7 @@ function validateForm(){
 <label>Have you ever been mullet hunting?</label><br />
 <input type="radio" name="question2" value="yes" />Yes<br />
 <input type="radio" name="question2" value="no" /> No<br />
-<!--<h3>Question 3</h3>
+<h3>Question 3</h3>
 <label>This was an easy project...</label><br />
 <input type="radio" name="question3" value="true" />True<br />
 <input type="radio" name="question3" value="false" />False<br />
@@ -101,6 +168,7 @@ function validateForm(){
 <input type="radio" name="question5" value="Athletics" />Athletics<br />
 <input type="radio" name="question5" value="Giants" />Giants<br />
 <input type="radio" name="question5" value="Padres" />Padres<br />
+<!--
 <h3>Question 6</h3>
 <label>Which days of the week do you have class?</label><br />
 <input type="checkbox" name="question6" value="Monday" />Monday<br />
