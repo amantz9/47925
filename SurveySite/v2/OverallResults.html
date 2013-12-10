@@ -34,11 +34,17 @@ function getCookies() {
 	var q4r=0, q4g=0, q4b=0;
 	var q5ang=0, q5dod=0, q5ath=0, q5gia=0, q5pad=0;
 	var q6Mon=0, q6Tues=0, q6Wed=0, q6Thurs=0, q6Fri=0, q6Sat=0;
+	var q7pizza=0, q7burger=0, q7taco=0, q7shrimp=0, q7none=0;
+	var q8pizza=0, q8burger=0, q8taco=0, q8shrimp=0, q8none=0;
+	var q9=[];
+	var q9i=0;
+	var q10=[];
+	var q10i=0;
 		
 	//Retrieve and cycle through all cookies
 	cookiesObj=getCookies();
 	for(var name in cookiesObj){
-		document.write(name+"="+cookiesObj[name]+"<br/>");//remove after testing
+//		document.write(name+"="+cookiesObj[name]+"<br/>");//remove after testing
 		var obj=JSON.parse(cookiesObj[name]);
 		
 		//Rules for result counters
@@ -73,8 +79,25 @@ function getCookies() {
 			if(name=="q6Thurs")q6Thurs++;
 			if(name=="q6Fri")q6Fri++;
 			if(name=="q6Sat")q6Sat++;
+			if(name=="q7pizza")q7pizza++;
+			if(name=="q7burger")q7burger++;
+			if(name=="q7taco")q7taco++;
+			if(name=="q7shrimp")q7shrimp++;
+			if(name=="q7none")q7none++;
+			if(name=="q8pizza")q8pizza++;
+			if(name=="q8burger")q8burger++;
+			if(name=="q8taco")q8taco++;
+			if(name=="q8shrimp")q8shrimp++;
+			if(name=="q8none")q8none++;
+			if(name=="question9"){
+				q9[q9i]=(obj[name].replace(/[+]/g, " "));
+				q9i++;
+			}
+			if(name=="question10"){
+				q10[q10i]=(obj[name].replace(/[+]/g, " "));
+				q10i++;
+			}
 			else{};
-			//document.write(name+"="+obj[name]+"<br/>");//remove after testing
 		}
 	}
 	//Display the results
@@ -98,6 +121,27 @@ function getCookies() {
 	document.write("<p>Question 6 Thursday = "+q6Thurs+"</p>");
 	document.write("<p>Question 6 Friday = "+q6Fri+"</p>");
 	document.write("<p>Question 6 Saturday = "+q6Sat+"</p>");
+	document.write("<p>Question 7 Pizza = "+q7pizza+"</p>");
+	document.write("<p>Question 7 Cheeseburger = "+q7burger+"</p>");
+	document.write("<p>Question 7 Taco = "+q7taco+"</p>");
+	document.write("<p>Question 7 Shrimp = "+q7shrimp+"</p>");
+	document.write("<p>Question 7 None of the Above = "+q7none+"</p>");
+	document.write("<p>Question 8 Pizza = "+q8pizza+"</p>");
+	document.write("<p>Question 8 Cheeseburger = "+q8burger+"</p>");
+	document.write("<p>Question 8 Taco = "+q8taco+"</p>");
+	document.write("<p>Question 8 Shrimp = "+q8shrimp+"</p>");
+	document.write("<p>Question 8 None of the Above = "+q8none+"</p>");
+	document.write("<p>Question 9 Results:<br /><ul>");
+	for(i=0; i<q9.length; i++){
+		document.write("<li>"+q9[i]+"</li>");
+	}
+	document.write("</ul>");
+	document.write("<p>Question 10 Results:<br /><ul>");
+	for(i=0; i<q10.length; i++){
+		document.write("<li>"+q10[i]+"</li>");
+	}
+	document.write("</ul>");
+
 
 
 </script>

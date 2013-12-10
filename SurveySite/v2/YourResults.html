@@ -15,7 +15,9 @@ function getFormData(url){
 		var name=map[0];
 		var value=map[1];
 		obj[name]=value;
+		
 //Conditions to modify cookie object for checkbox questions
+//Begin question 6
 		if(name=="question6" && obj[name]=="Monday"){
 			name="q6Mon";
 			obj[name]="isChecked";
@@ -38,6 +40,49 @@ function getFormData(url){
 		}
 		if(name=="question6" && obj[name]=="Saturday"){
 			name="q6Sat";
+			obj[name]="isChecked";
+		}
+//Begin question 7
+		if(name=="question7" && obj[name]=="pizza"){
+			name="q7pizza";
+			obj[name]="isChecked";
+		}
+		if(name=="question7" && obj[name]=="cheeseburger"){
+			name="q7burger";
+			obj[name]="isChecked";
+		}
+		if(name=="question7" && obj[name]=="taco"){
+			name="q7taco";
+			obj[name]="isChecked";
+		}
+		if(name=="question7" && obj[name]=="shrimp"){
+			name="q7shrimp";
+			obj[name]="isChecked";
+		}
+		if(name=="question7" && obj[name]=="none"){
+			name="q7none";
+			obj[name]="isChecked";
+		}
+		
+//Begin question 8
+		if(name=="question8" && obj[name]=="pizza"){
+			name="q8pizza";
+			obj[name]="isChecked";
+		}
+		if(name=="question8" && obj[name]=="cheeseburger"){
+			name="q8burger";
+			obj[name]="isChecked";
+		}
+		if(name=="question8" && obj[name]=="taco"){
+			name="q8taco";
+			obj[name]="isChecked";
+		}
+		if(name=="question8" && obj[name]=="shrimp"){
+			name="q8shrimp";
+			obj[name]="isChecked";
+		}
+		if(name=="question8" && obj[name]=="none"){
+			name="q8none";
 			obj[name]="isChecked";
 		}
 	}
@@ -82,21 +127,19 @@ function setCookie(name, value, secondsToLive) {
 	var surveyUser;
 	for(var name in $_GET){
 		if(name=="uName") surveyUser=$_GET[name]; //Generates cookie name to id seperate users
-/*		if(name=="question6" && $_GET[name]=="Monday"){
-			alert($_GET[name]);
-		}
-		if(name=="question6" && $_GET[name]=="Tuesday"){
-			alert($_GET[name]);
-		}*/
-		else
+		if(name=="question6");
+		if(name=="question7");
+		if(name=="question8");
+		else{
 		document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+		}
 	}
 	//Sets the cookie for use by other pages using the username assigned above
 	var str=JSON.stringify($_GET);
-	var seconds=150;
+	var seconds=10000;
 	setCookie(surveyUser, str, seconds);
 	
-	document.write(str);
+//	document.write(str);//remove after testing
 	
 </script>
 
