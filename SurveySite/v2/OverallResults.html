@@ -3,6 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Survey Results</title>
+<style>
+body {margin-left: 20px;}
+p {line-height:.5em;}
+td {vertical-align: top;
+	width: 400px;}
+</style>
 <script type="text/javascript">
 
 function getCookies() {
@@ -26,6 +32,7 @@ function getCookies() {
 </head>
 
 <body>
+<table><tr><td><h1>Survey Results</h1></td></tr>
 <script type="text/javascript">
 	//Counters for survey results
 	var q1yes=0, q1no=0;
@@ -101,46 +108,28 @@ function getCookies() {
 		}
 	}
 	//Display the results
-	document.write("<p>Question 1 Yes = "+q1yes+"</p>");
-	document.write("<p>Question 1 No = "+q1no+"</p>");
-	document.write("<p>Question 2 Yes = "+q2yes+"</p>");
-	document.write("<p>Question 2 No = "+q2no+"</p>");
-	document.write("<p>Question 3 True = "+q3true+"</p>");
-	document.write("<p>Question 3 False = "+q3false+"</p>");
-	document.write("<p>Question 4 Red = "+q4r+"</p>");
-	document.write("<p>Question 4 Green = "+q4g+"</p>");
-	document.write("<p>Question 4 Blue = "+q4b+"</p>");
-	document.write("<p>Question 5 Angels = "+q5ang+"</p>");
-	document.write("<p>Question 5 Dodgers = "+q5dod+"</p>");
-	document.write("<p>Question 5 Athletics = "+q5ath+"</p>");
-	document.write("<p>Question 5 Giants = "+q5gia+"</p>");
-	document.write("<p>Question 5 Padres = "+q5pad+"</p>");
-	document.write("<p>Question 6 Monday = "+q6Mon+"</p>");
-	document.write("<p>Question 6 Tuesday = "+q6Tues+"</p>");
-	document.write("<p>Question 6 Wednesday = "+q6Wed+"</p>");
-	document.write("<p>Question 6 Thursday = "+q6Thurs+"</p>");
-	document.write("<p>Question 6 Friday = "+q6Fri+"</p>");
-	document.write("<p>Question 6 Saturday = "+q6Sat+"</p>");
-	document.write("<p>Question 7 Pizza = "+q7pizza+"</p>");
-	document.write("<p>Question 7 Cheeseburger = "+q7burger+"</p>");
-	document.write("<p>Question 7 Taco = "+q7taco+"</p>");
-	document.write("<p>Question 7 Shrimp = "+q7shrimp+"</p>");
-	document.write("<p>Question 7 None of the Above = "+q7none+"</p>");
-	document.write("<p>Question 8 Pizza = "+q8pizza+"</p>");
-	document.write("<p>Question 8 Cheeseburger = "+q8burger+"</p>");
-	document.write("<p>Question 8 Taco = "+q8taco+"</p>");
-	document.write("<p>Question 8 Shrimp = "+q8shrimp+"</p>");
-	document.write("<p>Question 8 None of the Above = "+q8none+"</p>");
-	document.write("<p>Question 9 Results:<br /><ul>");
+	document.write("<tr><td><h3>Question 1</h3><p><strong>Yes</strong> = "+q1yes+"</p><p><strong>No</strong> = "+q1no+"</p>");
+	document.write("<h3>Question 2</h3><p><strong>Yes</strong> = "+q2yes+"</p><p><strong>No</strong> = "+q2no+"</p>");
+	document.write("<h3>Question 3</h3><p><strong>True</strong> = "+q3true+"</p><p><strong>False</strong> = "+q3false+"</p>");
+	document.write("<h3>Question 4</h3><p><strong>Red</strong> = "+q4r+"</p><p><strong>Green = </strong>"+q4g+"</p><p><strong>Blue</strong> = "+q4b+"</p>");
+	document.write("<h3>Question 5</h3><p><strong>Angels</strong> = "+q5ang+"</p><p><strong>Dodgers = </strong>"+q5dod+"</p><p><strong>Athletics</strong> = "+q5ath+"</p>");
+	document.write("<p><strong>Giants</strong> = "+q5gia+"</p><p><strong>Padres = </strong>"+q5pad+"</p>");
+	document.write("<h3>Question 6</h3><p><strong>Monday</strong> = "+q6Mon+"</p><p><strong>Tuesday = </strong>"+q6Tues+"</p><p><strong>Wednesday</strong> = "+q6Wed+"</p>");
+	document.write("<p><strong>Thursday</strong> = "+q6Thurs+"</p><p><strong>Friday = </strong>"+q6Fri+"</p><p><strong>Saturday = </strong>"+q6Sat+"</p>");
+	document.write("</td><td><h3>Question 7</h3><p><strong>Pizza</strong> = "+q7pizza+"</p><p><strong>Cheeseburger = </strong>"+q7burger+"</p><p><strong>Taco</strong> = "+q7taco+"</p>");
+	document.write("<p><strong>Shrimp</strong> = "+q7shrimp+"</p><p><strong>None of the Above = </strong>"+q7none+"</p>");
+	document.write("<h3>Question 8</h3><p><strong>Pizza</strong> = "+q8pizza+"</p><p><strong>Cheeseburger = </strong>"+q8burger+"</p><p><strong>Taco</strong> = "+q8taco+"</p>");
+	document.write("<p><strong>Shrimp</strong> = "+q8shrimp+"</p><p><strong>None of the Above = </strong>"+q8none+"</p>");
+	document.write("<h3>Question 9 Results:</h3><ul>");
 	for(i=0; i<q9.length; i++){
 		document.write("<li>"+q9[i]+"</li>");
 	}
 	document.write("</ul>");
-	document.write("<p>Question 10 Results:<br /><ul>");
+	document.write("<h3>Question 10 Results:</h3><ul>");
 	for(i=0; i<q10.length; i++){
 		document.write("<li>"+q10[i]+"</li>");
 	}
-	document.write("</ul>");
+	document.write("</ul></td></tr></table>");
 
 
 
