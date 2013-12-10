@@ -37,7 +37,7 @@ function valUser(){
 	for(var name in cookiesObj){
 		var obj=JSON.parse(cookiesObj[name]);
 		for(var name in obj){
-			//var un=document.forms["survey"]["uName"].value;
+			var un=document.forms["survey"]["uName"].value;
 			if(obj[name]==un){
 				alert("This name is taken, please enter a new username");
 				return false;
@@ -168,7 +168,7 @@ function validateForm(){
 <input type="radio" name="question5" value="Athletics" />Athletics<br />
 <input type="radio" name="question5" value="Giants" />Giants<br />
 <input type="radio" name="question5" value="Padres" />Padres<br />
-<!--
+
 <h3>Question 6</h3>
 <label>Which days of the week do you have class?</label><br />
 <input type="checkbox" name="question6" value="Monday" />Monday<br />
@@ -177,6 +177,7 @@ function validateForm(){
 <input type="checkbox" name="question6" value="Thursday" />Thursday<br />
 <input type="checkbox" name="question6" value="Friday" />Friday<br />
 <input type="checkbox" name="question6" value="Saturday" />Saturday<br />
+<!--
 <h3>Question 7</h3>
 <label>Which foods do you like to eat?</label><br />
 <input type="checkbox" name="question7" value="pizza" />Pizza<br />
@@ -191,13 +192,14 @@ function validateForm(){
 <input type="checkbox" name="question8" value="taco" />Taco<br />
 <input type="checkbox" name="question8" value="shrimp" />Shrimp<br />
 <input type="checkbox" name="question8" value="none" />None of the Above<br />
-    <h3>Question 9</h3>
-    <label>What is your name?</label><br />
-    <input name="question9" size="50" /><br />
-<h3>Question 10</h3>
+<h3>Question 9</h3>
 <label>What city are you from?</label><br />
-<input name="question10" size="50" /><br />-->
+<input name="question9" size="50" /><br />-->
+<h3>Question 10</h3>
+<label>Do you have any comments</label><br />
+<textarea name="question10" cols="50" rows="5"></textarea><br />
 <input type="submit" name="submit" value="Next" />
+</form>
 
 
 </body>
