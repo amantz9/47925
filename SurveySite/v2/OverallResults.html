@@ -33,6 +33,7 @@ function getCookies() {
 	var q3true=0, q3false=0;
 	var q4r=0, q4g=0, q4b=0;
 	var q5ang=0, q5dod=0, q5ath=0, q5gia=0, q5pad=0;
+	var q6Mon=0, q6Tues=0, q6Wed=0, q6Thurs=0, q6Fri=0, q6Sat=0;
 		
 	//Retrieve and cycle through all cookies
 	cookiesObj=getCookies();
@@ -66,6 +67,12 @@ function getCookies() {
 				if(obj[name]=="Giants")q5gia++;
 				if(obj[name]=="Padres")q5pad++;
 			}
+			if(name=="q6Mon")q6Mon++;
+			if(name=="q6Tues")q6Tues++
+			if(name=="q6Wed")q6Wed++;
+			if(name=="q6Thurs")q6Thurs++;
+			if(name=="q6Fri")q6Fri++;
+			if(name=="q6Sat")q6Sat++;
 			else{};
 			//document.write(name+"="+obj[name]+"<br/>");//remove after testing
 		}
@@ -85,6 +92,12 @@ function getCookies() {
 	document.write("<p>Question 5 Athletics = "+q5ath+"</p>");
 	document.write("<p>Question 5 Giants = "+q5gia+"</p>");
 	document.write("<p>Question 5 Padres = "+q5pad+"</p>");
+	document.write("<p>Question 6 Monday = "+q6Mon+"</p>");
+	document.write("<p>Question 6 Tuesday = "+q6Tues+"</p>");
+	document.write("<p>Question 6 Wednesday = "+q6Wed+"</p>");
+	document.write("<p>Question 6 Thursday = "+q6Thurs+"</p>");
+	document.write("<p>Question 6 Friday = "+q6Fri+"</p>");
+	document.write("<p>Question 6 Saturday = "+q6Sat+"</p>");
 
 
 </script>

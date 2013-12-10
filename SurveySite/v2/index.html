@@ -116,7 +116,22 @@ function valQ5(){
 		}
 	}
 	if(!isChecked){
-		alert("Please answer question 5.")
+		alert("Please answer question 5.");
+		return false;
+	}
+	else return true;
+}
+
+function valQ6(){
+	var isChecked=false;
+	var checks=document.getElementsByName("question6");
+	for(var i=0, check; check=checks[i]; i++){
+		if(check.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 6.");
 		return false;
 	}
 	else return true;
@@ -130,6 +145,7 @@ function validateForm(){
 	if(!valQ3())return false;
 	if(!valQ4())return false;
 	if(!valQ5())return false;
+	if(!valQ6())return false;
 	else{
 		return true;
 	}
