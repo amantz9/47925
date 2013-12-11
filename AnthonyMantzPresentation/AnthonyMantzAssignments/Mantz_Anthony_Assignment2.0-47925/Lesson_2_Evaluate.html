@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lesson 2 Evaluate</title>
+</head>
+
+<!--Anthony Mantz
+	CIS14A-47925-->
+    
+<body>
+	<h2>Lesson 2 Evaluate</h2>
+    
+    <h3>Problem 1</h3>
+	<script type="text/javascript">
+		var a = 0x3FF;
+		var b = 0477;
+		document.write("<p>Conversion of 3FF hex to decimal = " + a + "</p>");
+		document.write("<p>Conversion of 477 octal to decimal = " + b + "</p>");
+	</script>
+    
+    <h3>Problem 2</h3>
+	<script type="text/javascript">
+		var a = 1.7976931348623157e+308;
+		var b = 5e-324;
+		document.write("<p>The largest Javascript number = " + a + "</p>");
+		document.write("<p>The smallest Javascript number = " + b + "</p>");
+	</script>
+    
+    <h3>Problem 3</h3>
+    <script type="text/javascript">
+		var hello = "Hello World";
+		var loc1, loc2;
+		loc1 = hello.indexOf("o");
+		loc2 = hello.indexOf("o",loc1 + 1);
+		document.write("<p>The location of the first 'o' is " + loc1 + "</p>");
+		document.write("<p>The location of the second 'o' is " + loc2 + "</p>");
+	</script>
+    
+    <h3>Problem 4</h3>
+    <script type="text/javascript">
+		var a = 3.7;
+		document.write("<p>Now " + a + " is a number</p>");
+		a = a.toString();
+		document.write("<p>Now " + a + " is a string</p>");
+		a = Number(a);
+		document.write("<p>Now " + a + " is a number again.</p>");
+	</script>
+    
+    <h3>Problem 5</h3>
+    <script type="text/javascript">
+		var a = true;
+		var b = true;
+		if((a||b)&&(a<b)){
+			document.write("<p>True</p>");
+			//("<p>(a||b)&&(a\u003Cb) = true</p>");
+			}
+		else{
+			document.write("<p>False</p>");
+			//document.write("<p>(a||b)&&(a\u003Cb) = false</p>");
+			}
+	/*****For some reason the browsers I tested this in would take neither the < sign or \u003C and cut off
+	my output at that character*****/
+	</script>
+    
+    <h3>Problem 6</h3>
+    <script type="text/javascript">
+		var a = 5.6;
+		document.write("<p>a = " + a + "</p>");
+		document.write("<p>a to the power of a = " + Math.pow(a, a) + "</p>");
+		document.write("<p>a rounded to the nearest integer = " + Math.round(a) + "<p>");
+		document.write("<p>The square root of a = " + Math.sqrt(a) + "<p>");
+		document.write("<p>PI = " + Math.PI + "</p>");
+		document.write("<p>The natural logarithm of a = " + Math.log(a) + "</p>");		
+	</script>
+    
+    <h3>Problem 7</h3>
+    <script type="text/javascript">
+		var thisVar = null;
+		var thatVar;
+		document.write("<p>A null variable thisVar = " + typeof(thisVar) + "</p>");
+		document.write("<p>An undefined variable thatVar = " + typeof(thatVar) + "</p>");
+	</script>
+    
+    <h3>Problem 8</h3>
+    <script type="text/javascript">
+		var startDate = new Date(2009, 1, 15);
+		var endDate = new Date(2009, 5, 10);
+		var dayCount = endDate.getTime() - startDate.getTime();
+		dayCount = Math.floor(dayCount / (1000 * 60 * 60 * 24));
+		document.write("<p>There are " + dayCount + " days between " + startDate.toDateString() + " and " + endDate.toDateString() + ".</p>");
+	</script>
+    
+    <h3>Problem 9</h3>
+    <script type="text/javascript">
+		var thisString = "This is a string";
+		var thatString = "This is " + "a string";
+		if(thisString === thatString){
+			document.write("<p>The strings are compared by value</p>");
+		}
+		else document.write("<p>The strings are compared by reference</p>");
+	</script>
+</body>
+</html>

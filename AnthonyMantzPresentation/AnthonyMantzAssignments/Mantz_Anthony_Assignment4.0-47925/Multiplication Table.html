@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Multiplication Table</title>
+<style type="text/css">
+td {
+	text-align: center;
+	width: 40px;
+}
+
+tr {
+	height: 40px;
+}
+</style>
+</head>
+
+<body>
+	<table width="600" border="1">
+		<script type="text/javascript">
+			document.write("<h1>Multiplication Table</h1>");
+            var rows=12;var cols=12;
+                            
+			//Write Header Row
+			document.write("<tr><td></td>");
+            for(var col=1;col<=cols;col++){
+                document.write("<th>"+col+"</th>");
+			}
+			document.write("</tr>");
+			
+			//Fill rest of table
+            for(var row=1;row<=rows;row++){
+                document.write("<tr><td><strong>"+row+"</strong></td>");
+                for(var col=1;col<=cols;col++){
+                document.write("<td>"+col*row+"</td>");
+                }
+            document.write("</tr>");
+            }
+        </script>
+	</table>
+</body>
+</html>

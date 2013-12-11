@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Savings Table</title>
+<style type="text/css">
+td {
+	text-align: center;
+	width: 40px;
+}
+
+tr {
+	height: 30px;
+}
+</style>
+</head>
+
+<!--Anthony Mantz
+	CIS-14A-->
+    
+<body>
+	<h1>Savings Table</h1>
+    
+	<table width="600" border="1">
+	
+		<script type="text/javascript">
+            //Declare Variables
+            var openingBalance=1000;//prompt("What is your starting balance?")*1;
+			//var lowRate=prompt("What is the lowest rate you want to see?")*1;
+			//var highRate=prompt("What is the highest rate you want to see?")*1;
+            var iRate=5;
+            var year=50;//prompt("How many years of savings do you want to see?");
+            
+			//Display Table Title
+            document.write("<h2>Starting Balance = $"+openingBalance+"</h2>");
+			//Display Header Row
+			document.write("<th>Year</th>");
+			for(var rate=iRate;rate<=10;rate++){
+				document.write("<th>"+rate+"%</th>")
+			};
+		
+			//Fill Table
+			for(var curYr=1;curYr<=year;curYr++){
+				document.write("<tr><td><strong>"+curYr+"</strong></td>");//Year column
+				
+				for(var rate=iRate;rate<=10;rate++){
+					var balance = openingBalance;
+					for(var yr=1;yr<=curYr;yr++){
+						balance=balance+((balance*rate)/100);
+					}
+					document.write("<td>"+balance.toFixed(2)+"</td>");
+				}
+				document.write("</tr>");
+			}
+        </script>
+	</table>
+</body>
+</html>

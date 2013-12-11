@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>If Else Triple Time Paycheck</title>
+</head>
+
+<body>
+<script type="text/javascript">
+	//Declare Variables
+	var payRate;//$/hr
+	var hrsWrkd;//Hours
+	var dblTime=40;//Hours at which doubletime occurs
+	var tplTime=60;//Hours at which tripletime occurs
+	var payChk=0;
+	
+	//Collect data
+	payRate = prompt("What is your rate of pay?");
+	hrsWrkd = prompt("How many hours did you work?");
+	
+	//Calculate the paycheck
+	if(hrsWrkd<=dblTime){
+		payChk=hrsWrkd*payRate;
+	}
+	else if(hrsWrkd>dblTime&&hrsWrkd<=tplTime){
+		payChk=hrsWrkd*payRate+(hrsWrkd-dblTime)*payRate;
+	}
+	else{
+		payChk=hrsWrkd*payRate+(hrsWrkd-dblTime)*payRate+(hrsWrkd-tplTime)*payRate;
+	}		
+			
+	//Output the results
+	document.write("Working "+hrsWrkd+" hours at $"+payRate+" per hour earns you:<br />");
+	document.write("<strong>$"+payChk+"</strong>");
+</script>
+</body>
+</html>

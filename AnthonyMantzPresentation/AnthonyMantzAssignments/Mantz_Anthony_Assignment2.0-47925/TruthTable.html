@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Truth Tables</title>
+</head>
+
+<!--Anthony Mantz
+	CIS14A-47925
+    Assignment 2.0-Truth Table -->
+    
+<body>
+    <table width="200" border="1">
+    	<tr>
+         <th>x</th>
+         <th>y</th>
+         <th>!x</th>
+         <th>!y</th>
+         <th>x&&y</th>
+         <th>x||y</th>
+         <th>x^y</th>
+         <th>x^y^x</th>
+         <th>x^y^y</th>
+         <th>!(x&&y)</th>
+         <th>!x||!y</th>
+         <th>!(x||y)</th>
+         <th>!x&&!y</th>
+        </tr>
+	<tr>         
+		<script type="text/javascript">
+            //Initialize variables
+            var x=true,y=true;
+            //Display row1
+            document.write("<td>"+(x?'T':'F')+"</td>");
+            document.write("<td>"+(y?'T':'F')+"</td>");
+            document.write("<td>"+(!x?'T':'F')+"</td>");
+			document.write("<td>"+(!y?'T':'F')+"</td>");	
+			document.write("<td>"+(x&&y?'T':'F')+"</td>");	
+			document.write("<td>"+(x||y?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y^x?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y^y?'T':'F')+"</td>");	
+			document.write("<td>"+(!(x&&y)?'T':'F')+"</td>");	
+			document.write("<td>"+(!x||!y?'T':'F')+"</td>");	
+			document.write("<td>"+(!(x||y)?'T':'F')+"</td>");	
+			document.write("<td>"+(!x&&!y?'T':'F')+"</td>");	
+        </script>
+	</tr>
+    <tr>
+		<script type="text/javascript">
+			//Initialize variables for row 2
+			var x=true,y=false;
+			//Display row2
+            document.write("<td>"+(x?'T':'F')+"</td>");
+            document.write("<td>"+(y?'T':'F')+"</td>");
+            document.write("<td>"+(!x?'T':'F')+"</td>");
+			document.write("<td>"+(!y?'T':'F')+"</td>");	
+			document.write("<td>"+(x&&y?'T':'F')+"</td>");	
+			document.write("<td>"+(x||y?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y^x?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y^y?'T':'F')+"</td>");	
+			document.write("<td>"+(!(x&&y)?'T':'F')+"</td>");	
+			document.write("<td>"+(!x||!y?'T':'F')+"</td>");	
+			document.write("<td>"+(!(x||y)?'T':'F')+"</td>");	
+			document.write("<td>"+(!x&&!y?'T':'F')+"</td>");	
+		</script>
+	</tr>
+    <tr>
+		<script type="text/javascript">
+			//Initialize variables for row 3
+			var x=false,y=false;
+			//Display row3
+            document.write("<td>"+(x?'T':'F')+"</td>");
+            document.write("<td>"+(y?'T':'F')+"</td>");
+            document.write("<td>"+(!x?'T':'F')+"</td>");
+			document.write("<td>"+(!y?'T':'F')+"</td>");	
+			document.write("<td>"+(x&&y?'T':'F')+"</td>");	
+			document.write("<td>"+(x||y?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y^x?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y^y?'T':'F')+"</td>");	
+			document.write("<td>"+(!(x&&y)?'T':'F')+"</td>");	
+			document.write("<td>"+(!x||!y?'T':'F')+"</td>");	
+			document.write("<td>"+(!(x||y)?'T':'F')+"</td>");	
+			document.write("<td>"+(!x&&!y?'T':'F')+"</td>");	
+		</script>
+	</tr>
+    <tr>
+		<script type="text/javascript">
+			//Initialize variables for row 4
+			var x=false,y=false;
+			//Display row4
+            document.write("<td>"+(x?'T':'F')+"</td>");
+            document.write("<td>"+(y?'T':'F')+"</td>");
+            document.write("<td>"+(!x?'T':'F')+"</td>");
+			document.write("<td>"+(!y?'T':'F')+"</td>");	
+			document.write("<td>"+(x&&y?'T':'F')+"</td>");	
+			document.write("<td>"+(x||y?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y^x?'T':'F')+"</td>");	
+			document.write("<td>"+(x^y^y?'T':'F')+"</td>");	
+			document.write("<td>"+(!(x&&y)?'T':'F')+"</td>");	
+			document.write("<td>"+(!x||!y?'T':'F')+"</td>");	
+			document.write("<td>"+(!(x||y)?'T':'F')+"</td>");	
+			document.write("<td>"+(!x&&!y?'T':'F')+"</td>");	
+		</script>
+	</tr>
+</body>
+</html>

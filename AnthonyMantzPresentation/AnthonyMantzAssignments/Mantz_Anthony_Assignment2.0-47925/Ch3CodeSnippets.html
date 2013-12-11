@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Chapter 3 Code Snippets</title>
+</head>
+
+<!--Anthony Mantz
+	CIS14A - 49725 -->
+    
+<body>
+	<h2>Chapter 3 Code Snippets</h2>
+    
+	<h3>3.1.3 - Arithmetic in Javascript</h3>
+	<script type="text/javascript">
+		document.write(Math.pow(2,53) + "<br />");
+		document.write(Math.round(.6) + "<br />");
+		document.write(Math.ceil(.6) + "<br />");
+		document.write(Math.floor(.6) + "<br />");
+		document.write(Math.abs(-5) + "<br />");
+		var x = 3, y = 5, z = 7;
+		document.write(Math.max(x,y,z) + "<br />");
+		document.write(Math.min(x,y,z) + "<br />");
+		document.write(Math.random() + "<br />");
+		document.write(Math.PI + "<br />");
+		document.write(Math.E + "<br />");
+		document.write(Math.sqrt(3) + "<br />");
+		var a = Math.pow(3, 1/3);
+		document.write(a + "<br />");
+		document.write(Math.sin(0) + "<br />");
+		document.write(Math.log(10) + "<br />");
+		var b = Math.log(100)/Math.LN10;
+		document.write(b + "<br />");
+		var c = Math.log(512)/Math.LN2;
+		document.write(c + "<br />");
+		document.write(Math.exp(3));
+	</script>
+    
+    <h3>3.1.4 Binary Floating-Point and Rounding Errors</h3>
+    <script type="text/javascript">
+		var x = .3 - .2;
+		var y = .2 - .1;
+		if(x == y){
+			document.write("<p>True</p>");
+		}
+		else document.write("<p>False</p>");
+		if(x == .1){
+			document.write("<p>True</p>");
+		}
+		else document.write("<p>False</p>");
+		if(y == .1){
+			document.write("<p>True</p>");
+		}
+		else document.write("<p>False</p>");
+	</script>
+    
+    <h3>3.1.5 Dates and Times</h3>
+    <script type="text/javascript">
+		var then = new Date(2010, 0, 1);
+		var later = new Date(2010, 0, 1, 17, 10, 30);
+		var now = new Date();
+		var elapsed = now - then;
+		
+		document.write(later.getFullYear() + "<br />");
+		document.write(later.getMonth() + "<br />");
+		document.write(later.getDate() + "<br />");
+		document.write(later.getDay() + "<br />");
+		document.write(later.getHours() + "<br />");
+		document.write(later.getUTCHours() + "<br />");
+		document.write(later.toString() + "<br />");
+		document.write(later.toUTCString() + "<br />");
+		document.write(later.toLocaleDateString() + "<br />");
+		document.write(later.toLocaleTimeString() + "<br />");
+		document.write(later.toISOString());	
+    </script>
+    
+    <h3>3.2.3 - Working with Strings</h3>
+    <script type="text/javascript">
+		var s = "hello, world";
+		document.write(s.charAt(0) + "<br />");
+		document.write(s.charAt(s.length-1) + "<br />");
+		document.write(s.substring(1,4) + "<br />");
+		document.write(s.slice(1,4) + "<br />");
+		document.write(s.slice(-3) + "<br />");
+		document.write(s.indexOf("l") + "<br />");
+		document.write(s.lastIndexOf("l") + "<br />");
+		document.write(s.indexOf("l", 3) + "<br />");
+		document.write(s.split(", ") + "<br />");
+		document.write(s.replace("h", "H") + "<br />");
+		document.write(s.toUpperCase());
+	</script>
+    
+    <h3>3.8.2 - Explicit Conversions</h3>
+    <script type="text/javascript">
+		document.write(parseInt("3 blind mice") + "<br />");
+		document.write(parseFloat(" 3.14 meters") + "<br />");
+		document.write(parseInt("-12.34") + "<br />");
+		document.write(parseInt("0xFF") + "<br />");
+		document.write(parseInt("0xff") + "<br />");
+		document.write(parseInt("-0XFF") + "<br />");
+		document.write(parseFloat(".1") + "<br />");
+		document.write(parseInt("0.1") + "<br />");
+		document.write(parseInt(".1") + "<br />");
+		document.write(parseFloat("$72.47"));
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Savings Table with an Array</title>
+<style type="text/css">
+td {
+	text-align: center;
+	width: 40px;
+}
+
+tr {
+	height: 30px;
+}
+</style>
+</head>
+
+<!--Anthony Mantz
+	9/26/2013
+	CIS-14A
+    Savings Table using 2D Arrays-->
+    
+<body>
+	<h1>Savings Table</h1>
+    
+	<table width="600" border="1">
+	
+		<script type="text/javascript">
+            //Declare Variables
+            var openingBalance=prompt("What is your starting balance?")*1;
+			var lowRate=prompt("What is the lowest rate you want to see?")*1;
+			var highRate=prompt("What is the highest rate you want to see?")*1;
+            var iRate=lowRate;
+            var year=prompt("How many years of savings do you want to see?");
+            
+            document.write("<h2>Starting Balance = $"+openingBalance+"</h2>");
+			//Display Header Row
+			document.write("<th>Year</th>");
+			for(var rate=iRate;rate<=highRate;rate++){
+			document.write("<th>"+rate+"%</th>")
+			};
+			//Initialize starting data row
+			var newBal = new Array();
+				for(i=0;i<highRate-lowRate+1;i++){
+					newBal[i]=openingBalance;
+				}
+				
+			//Fill Table
+            for(var yr=1;yr<=year;yr++){
+				document.write("<tr><td><strong>"+yr+"</strong></td>");//Year column
+					iRate=lowRate;
+					for(i=0;i<highRate-lowRate+1;i++){
+						var bal=newBal[i];
+						bal=bal+(bal*iRate/100);
+						document.write("<td>"+bal.toFixed(2)+"</td>");
+						newBal[i]=bal;
+						iRate++;
+					}
+				document.write("</tr>");//End of each row
+			}
+				
+        </script>
+	</table>
+</body>
+</html>
