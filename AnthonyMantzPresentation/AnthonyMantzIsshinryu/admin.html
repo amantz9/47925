@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript">
+function getCookies() {
+    var cookies = {}; // The object we will return
+    var all = document.cookie; // Get all cookies in one big string
+    if (all === "") // If the property is the empty string
+        return cookies; // return an empty object
+    var list = all.split("; "); // Split into individual name=value pairs
+    for(var i = 0; i < list.length; i++) { // For each cookie
+        var cookie = list[i];
+        var p = cookie.indexOf("="); // Find the first = sign
+        var name = cookie.substring(0,p); // Get cookie name		
+        var value = cookie.substring(p+1); // Get cookie value
+        value = decodeURIComponent(value); // Decode the value
+        cookies[name] = value; // Store name and value in object
+    }
+    return cookies;
+}
+</script>
+</head>
+
+
+<body>
+<script type="text/javascript">
+	cookiesObj=getCookies();
+	for(var name in cookiesObj){
+		document.write(name+"<br />"+cookiesObj[name]+"<br/>");
+	}
+</script>
+</body>
+</html>

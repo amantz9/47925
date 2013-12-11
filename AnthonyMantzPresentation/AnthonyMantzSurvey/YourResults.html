@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Individual Recap</title>
+
+<script type="text/javascript">
+//Collect the data submitted on the form
+function getFormData(url){
+	var data=url.split("?");
+	var nvPairs=data[1].split("&");
+	var obj=new Object();
+	for(var i=0;i<nvPairs.length;i++) {
+		var map=nvPairs[i].split("=");
+		var name=map[0];
+		var value=map[1];
+		obj[name]=value;
+		
+//Conditions to modify cookie object for checkbox questions
+//Begin question 6
+		if(name=="question6" && obj[name]=="Monday"){
+			name="q6Mon";
+			obj[name]="isChecked";
+		}
+		if(name=="question6" && obj[name]=="Tuesday"){
+			name="q6Tues";
+			obj[name]="isChecked";
+		}
+		if(name=="question6" && obj[name]=="Wednesday"){
+			name="q6Wed";
+			obj[name]="isChecked";
+		}
+		if(name=="question6" && obj[name]=="Thursday"){
+			name="q6Thurs";
+			obj[name]="isChecked";
+		}
+		if(name=="question6" && obj[name]=="Friday"){
+			name="q6Fri";
+			obj[name]="isChecked";
+		}
+		if(name=="question6" && obj[name]=="Saturday"){
+			name="q6Sat";
+			obj[name]="isChecked";
+		}
+//Begin question 7
+		if(name=="question7" && obj[name]=="pizza"){
+			name="q7pizza";
+			obj[name]="isChecked";
+		}
+		if(name=="question7" && obj[name]=="cheeseburger"){
+			name="q7burger";
+			obj[name]="isChecked";
+		}
+		if(name=="question7" && obj[name]=="taco"){
+			name="q7taco";
+			obj[name]="isChecked";
+		}
+		if(name=="question7" && obj[name]=="shrimp"){
+			name="q7shrimp";
+			obj[name]="isChecked";
+		}
+		if(name=="question7" && obj[name]=="none"){
+			name="q7none";
+			obj[name]="isChecked";
+		}
+		
+//Begin question 8
+		if(name=="question8" && obj[name]=="pizza"){
+			name="q8pizza";
+			obj[name]="isChecked";
+		}
+		if(name=="question8" && obj[name]=="cheeseburger"){
+			name="q8burger";
+			obj[name]="isChecked";
+		}
+		if(name=="question8" && obj[name]=="taco"){
+			name="q8taco";
+			obj[name]="isChecked";
+		}
+		if(name=="question8" && obj[name]=="shrimp"){
+			name="q8shrimp";
+			obj[name]="isChecked";
+		}
+		if(name=="question8" && obj[name]=="none"){
+			name="q8none";
+			obj[name]="isChecked";
+		}
+	}
+	return obj;
+}
+
+//Cookie retrieval function
+function getCookies() {
+    var cookies = {}; 
+    var all = document.cookie; 
+    if (all === "") 
+        return cookies; 
+    var list = all.split("; "); 
+    for(var i = 0; i < list.length; i++) { 
+        var cookie = list[i];
+        var p = cookie.indexOf("="); 
+        var name = cookie.substring(0,p); 
+        var value = cookie.substring(p+1); 
+        value = decodeURIComponent(value); 
+        cookies[name] = value; 
+    }
+    return cookies;
+}
+
+//Cookie assignment function
+function setCookie(name, value, secondsToLive) {
+    var cookie = name + "=" + encodeURIComponent(value);
+    if (typeof daysToLive === "number")
+        cookie += "; max-age=" + (daysToLive);
+    document.cookie = cookie;
+}
+
+
+</script>
+
+</head>
+
+<body>
+<h3>Survey Recap</h3>
+<script type="text/javascript">
+	var $_GET=getFormData(location.href); //Calls function to retrieve all cookies
+	var surveyUser;
+	for(var name in $_GET){
+		if(name=="uName") surveyUser=$_GET[name]; //Generates cookie name to id seperate users
+		if(name=="question6");
+		if(name=="question7");
+		if(name=="question8");
+		else{
+		document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+		}
+	}
+	//Sets the cookie for use by other pages using the username assigned above
+	var str=JSON.stringify($_GET);
+	var seconds=10000;
+	setCookie(surveyUser, str, seconds);
+	
+//	document.write(str);//remove after testing
+	
+</script>
+
+    <p><a href="OverallResults.html">Click to see compiled results</a></p>
+    
+</body>
+</html>

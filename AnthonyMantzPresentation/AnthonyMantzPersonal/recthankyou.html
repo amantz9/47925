@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Mantz Music Message Sent</title>
+
+<link rel="stylesheet" type="text/css" href="mantzmusicstyle.css"/>
+<script type="text/javascript">
+//Collect the data submitted on the form
+	function getFormData(url){
+		var data=url.split("?");
+		var nvPairs=data[1].split("&");
+		var obj=new Object();
+		for(var i=0;i<nvPairs.length;i++) {
+			var map=nvPairs[i].split("=");
+			var name=map[0];
+			var value=map[1];
+			obj[name]=value;
+		}
+		return obj;
+	}
+</script>
+
+</head>
+
+<body>
+
+<table width="900" align="center">
+
+<!--Header Bar-->
+	<tr style="background-color:#111;">
+		<td width="410" valign="middle">	
+			<img src="images/MMLogo.jpg" alt="Mantz Music Logo" width="400" height="80" align="left" />
+		</td>
+        <td colspan="2">
+        	&nbsp;&nbsp;&nbsp;
+          <a href="home.html">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="onlinemixing.html">Online Mixing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="recording.html">Recording&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="clients.html">Clients&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="contact.html">Contact&nbsp;&nbsp;&nbsp;</a>
+        </td>
+	</tr>
+<!--End Header Bar-->
+<div class="main_content">
+  <div align="center">
+    <table width="900" border="1" cellspacing="2" cellpadding="20" align="center">
+      <tr>
+        <td>
+        <br /><br />
+        <div align="center">
+          <h1>Thank you for your order!</h1>
+          <h2>The following information has been submitted and you will receive an email shortly with a link to upload your audio files and some questions about your session. If you need to contact us please call 909-261-0416 or email <a href="mailto:booking@mantzmusic.com">booking@mantzmusic.com</a>.</h2>
+          <br /><br />
+        
+		<script type="text/javascript">
+			var addOnPrice = 15;
+			var tot=0;
+			var $_GET=getFormData(location.href);
+			for(var name in $_GET){
+				if(name=="NumberOfSongs"){
+					if($_GET[name]>=10){
+						var songPrice=200;
+					}
+					else songPrice=225;
+					var songTot=($_GET[name]*songPrice);
+					tot=tot+songTot;
+					document.write("Number of Songs x "+$_GET[name]+" = $"+songTot+"<br />");
+				}
+				else if(name=="vocalUp"){
+					var vuPrice=($_GET[name]*addOnPrice)
+					document.write("Vocal Up x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+vuPrice+"<br />");
+					tot=tot+vuPrice;
+				}
+				else if(name=="vocalDown"){
+					var vdPrice=($_GET[name]*addOnPrice)
+					document.write("Vocal Down x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+vdPrice+"<br />");
+					tot=tot+vdPrice;
+				}
+				else if(name=="acapella"){
+					var acaPrice=($_GET[name]*addOnPrice)
+					document.write("Acapella x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+acaPrice+"<br />");
+					tot=tot+acaPrice;
+				}
+				else if(name=="musicOnly"){
+					var moPrice=($_GET[name]*addOnPrice)
+					document.write("Music Only x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+moPrice+"<br />");
+					tot=tot+moPrice;
+				}
+				else if(name=="clean"){
+					var clPrice=($_GET[name]*addOnPrice)
+					document.write("Clean Version x "+$_GET[name]+" x "+"$"+addOnPrice+" = $"+clPrice+"<br />");
+					tot=tot+clPrice;
+				}
+				else if(name=="comments"){
+					document.write("Your total is $"+tot+"<br /><br />");
+					document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+				}
+				else document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+			}
+		</script>
+        <br /><br />
+
+
+        <a href="home.html"><img src="images/GiantNeve.jpg" width="400" height="300" alt="Neve at Ocean Way" /></a></td>
+      </tr>
+  </table>
+  </div>
+</div>
+
+<!--Begin Footer-->
+    <table width="900" border="1" cellspacing="2" cellpadding="20" align="center">
+    <tr>
+    	<td colspan="3" style="background-color: black;">
+        <p style="text-align:center">&copy;&nbsp;Anthony Mantz 2013 909-261-0416</p>
+        </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Survey Results</title>
+<style>
+body {margin-left: 20px;}
+p {line-height:.5em;}
+td {vertical-align: top;
+	width: 400px;}
+</style>
+<script type="text/javascript">
+
+function getCookies() {
+    var cookies = {}; // The object we will return
+    var all = document.cookie; // Get all cookies in one big string
+    if (all === "") // If the property is the empty string
+        return cookies; // return an empty object
+    var list = all.split("; "); // Split into individual name=value pairs
+    for(var i = 0; i < list.length; i++) { // For each cookie
+        var cookie = list[i];
+        var p = cookie.indexOf("="); // Find the first = sign
+        var name = cookie.substring(0,p); // Get cookie name
+        var value = cookie.substring(p+1); // Get cookie value
+        value = decodeURIComponent(value); // Decode the value
+        cookies[name] = value; // Store name and value in object
+    }
+    return cookies;
+}
+
+</script>
+</head>
+
+<body>
+<table><tr><td><h1>Survey Results</h1></td></tr>
+<script type="text/javascript">
+	//Counters for survey results
+	var q1yes=0, q1no=0;
+	var q2yes=0, q2no=0;
+	var q3true=0, q3false=0;
+	var q4r=0, q4g=0, q4b=0;
+	var q5ang=0, q5dod=0, q5ath=0, q5gia=0, q5pad=0;
+	var q6Mon=0, q6Tues=0, q6Wed=0, q6Thurs=0, q6Fri=0, q6Sat=0;
+	var q7pizza=0, q7burger=0, q7taco=0, q7shrimp=0, q7none=0;
+	var q8pizza=0, q8burger=0, q8taco=0, q8shrimp=0, q8none=0;
+	var q9=[];
+	var q9i=0;
+	var q10=[];
+	var q10i=0;
+		
+	//Retrieve and cycle through all cookies
+	cookiesObj=getCookies();
+	for(var name in cookiesObj){
+//		document.write(name+"="+cookiesObj[name]+"<br/>");//remove after testing
+		var obj=JSON.parse(cookiesObj[name]);
+		
+		//Rules for result counters
+		for(var name in obj){
+			if(name=="question1"){
+				if(obj[name]=="yes")q1yes++;
+				if(obj[name]=="no")q1no++;
+			}
+			if(name=="question2"){
+				if(obj[name]=="yes")q2yes++;
+				if(obj[name]=="no")q2no++;
+			}
+			if(name=="question3"){
+				if(obj[name]=="true")q3true++;
+				if(obj[name]=="false")q3false++;
+			}
+			if(name=="question4"){
+				if(obj[name]=="red")q4r++;
+				if(obj[name]=="green")q4g++;
+				if(obj[name]=="blue")q4b++;
+			}
+			if(name=="question5"){
+				if(obj[name]=="Angels")q5ang++;
+				if(obj[name]=="Dodgers")q5dod++;
+				if(obj[name]=="Athletics")q5ath++;
+				if(obj[name]=="Giants")q5gia++;
+				if(obj[name]=="Padres")q5pad++;
+			}
+			if(name=="q6Mon")q6Mon++;
+			if(name=="q6Tues")q6Tues++
+			if(name=="q6Wed")q6Wed++;
+			if(name=="q6Thurs")q6Thurs++;
+			if(name=="q6Fri")q6Fri++;
+			if(name=="q6Sat")q6Sat++;
+			if(name=="q7pizza")q7pizza++;
+			if(name=="q7burger")q7burger++;
+			if(name=="q7taco")q7taco++;
+			if(name=="q7shrimp")q7shrimp++;
+			if(name=="q7none")q7none++;
+			if(name=="q8pizza")q8pizza++;
+			if(name=="q8burger")q8burger++;
+			if(name=="q8taco")q8taco++;
+			if(name=="q8shrimp")q8shrimp++;
+			if(name=="q8none")q8none++;
+			if(name=="question9"){
+				q9[q9i]=(obj[name].replace(/[+]/g, " "));
+				q9i++;
+			}
+			if(name=="question10"){
+				q10[q10i]=(obj[name].replace(/[+]/g, " "));
+				q10i++;
+			}
+			else{};
+		}
+	}
+	//Display the results
+	document.write("<tr><td><h3>Question 1</h3><p><strong>Yes</strong> = "+q1yes+"</p><p><strong>No</strong> = "+q1no+"</p>");
+	document.write("<h3>Question 2</h3><p><strong>Yes</strong> = "+q2yes+"</p><p><strong>No</strong> = "+q2no+"</p>");
+	document.write("<h3>Question 3</h3><p><strong>True</strong> = "+q3true+"</p><p><strong>False</strong> = "+q3false+"</p>");
+	document.write("<h3>Question 4</h3><p><strong>Red</strong> = "+q4r+"</p><p><strong>Green = </strong>"+q4g+"</p><p><strong>Blue</strong> = "+q4b+"</p>");
+	document.write("<h3>Question 5</h3><p><strong>Angels</strong> = "+q5ang+"</p><p><strong>Dodgers = </strong>"+q5dod+"</p><p><strong>Athletics</strong> = "+q5ath+"</p>");
+	document.write("<p><strong>Giants</strong> = "+q5gia+"</p><p><strong>Padres = </strong>"+q5pad+"</p>");
+	document.write("<h3>Question 6</h3><p><strong>Monday</strong> = "+q6Mon+"</p><p><strong>Tuesday = </strong>"+q6Tues+"</p><p><strong>Wednesday</strong> = "+q6Wed+"</p>");
+	document.write("<p><strong>Thursday</strong> = "+q6Thurs+"</p><p><strong>Friday = </strong>"+q6Fri+"</p><p><strong>Saturday = </strong>"+q6Sat+"</p>");
+	document.write("</td><td><h3>Question 7</h3><p><strong>Pizza</strong> = "+q7pizza+"</p><p><strong>Cheeseburger = </strong>"+q7burger+"</p><p><strong>Taco</strong> = "+q7taco+"</p>");
+	document.write("<p><strong>Shrimp</strong> = "+q7shrimp+"</p><p><strong>None of the Above = </strong>"+q7none+"</p>");
+	document.write("<h3>Question 8</h3><p><strong>Pizza</strong> = "+q8pizza+"</p><p><strong>Cheeseburger = </strong>"+q8burger+"</p><p><strong>Taco</strong> = "+q8taco+"</p>");
+	document.write("<p><strong>Shrimp</strong> = "+q8shrimp+"</p><p><strong>None of the Above = </strong>"+q8none+"</p>");
+	document.write("<h3>Question 9 Results:</h3><ul>");
+	for(i=0; i<q9.length; i++){
+		document.write("<li>"+q9[i]+"</li>");
+	}
+	document.write("</ul>");
+	document.write("<h3>Question 10 Results:</h3><ul>");
+	for(i=0; i<q10.length; i++){
+		document.write("<li>"+q10[i]+"</li>");
+	}
+	document.write("</ul></td></tr></table>");
+
+
+
+</script>
+
+<p><a href="index.html">Take survey again</a></p>
+
+
+</body>
+</html>

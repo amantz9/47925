@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Isshinryu Karate - Thank You</title>
+<link rel="stylesheet" type="text/css" href="isshinryuStyle.css" />
+
+<script type="text/javascript">
+//Collect the data submitted on the form
+	function getFormData(url){
+		var data=url.split("?");
+		var nvPairs=data[1].split("&");
+		var obj=new Object();
+		for(var i=0;i<nvPairs.length;i++) {
+			var map=nvPairs[i].split("=");
+			var name=map[0];
+			var value=map[1];
+			obj[name]=value;
+		}
+		return obj;
+	}
+	function setCookie(name, value, secondsToLive) {
+    var cookie = name + "=" + encodeURIComponent(value);
+    if (typeof daysToLive === "number")
+        cookie += "; max-age=" + (daysToLive);
+    document.cookie = cookie;
+	}
+</script>
+</head>
+
+<!--Begin Header-->
+    <table>
+      <tr>
+        <td width="440"><img src="images/isshinryuLogo.jpg" width="420" height="200" alt="Isshinryu Logo" />
+    </td>
+        <td align="center" style="vertical-align:middle;">
+        	<h2>760-568-0961</h2>
+            <p>68225 Ramon Road<br/>
+            Cathedral City, CA 92334</p>
+      	</td>
+      </tr>
+	</table>
+    <div class="nav">
+    <table>
+      <tr>
+        <td>
+        	<ul>
+            	<li><a href="home.html">Home</a></li>
+            	<li><a href="announcements.html">Announcements</a></li>
+            	<li><a href="blackBelts.html">Black Belt Profiles</a></li>
+            	<li><a href="terminology.html">Terminology</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+          	</ul>
+      	</td>
+      </tr>
+    </table>
+    </div>
+
+<!--End Header-->
+
+<!--Begin Main Content-->
+	<div class="form">
+    <table>
+        <tr>
+            <td style="height:500px;">
+            <h1>Thank You!</h1>
+            <h3>The following information has been submitted:</h3>
+            <div id="formData">
+            <table>
+            	<tr><td>
+          		<script type="text/javascript">
+					var $_GET=getFormData(location.href);
+					for(var name in $_GET){
+						document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+					}
+					var str=JSON.stringify($_GET);
+					var seconds=120;
+					contactUs="ContactUs"+$_GET[name];
+					setCookie("ContactUs", str, seconds);
+				</script>
+				</td></tr>
+            </table>
+            </div>
+            <a href="home.html">Back to Home</a>           
+            </td>
+        </tr>
+    </table>
+    </div>
+    
+<!--Begin Footer-->
+	<div class="footer">
+    <table>
+    	<tr>
+        <td>
+        	<ul>
+            	<li><a href="home.html">Home</a></li>
+            <li><a href="announcements.html">Announcements</a></li>
+            <li><a href="blackBelts.html">Black Belt Profiles</a></li>
+            <li><a href="terminology.html">Terminology</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <p align="center">&copy; 2013 Isshinryu Karate 760-568-0961</p>
+      	</td>
+      </tr>
+  	</table>
+    </div>
+<!--End Footer-->
+
+</body>
+</html>

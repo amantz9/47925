@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Mantz Music Contact</title>
+
+<link rel="stylesheet" type="text/css" href="mantzmusicstyle.css"/>
+<!--Input Validation-->
+<script type="text/javascript">
+	function validateName(){
+		var x=document.forms["contactUs"]["Name"].value;
+		var re = /^\s*[A-Za-z]{2,}\s+[A-Za-z]{2,}\s*$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter your first and last name.");
+			document.forms["contactUs"]["Name"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateEmail(){
+		var x=document.forms["contactUs"]["Email"].value;
+		var re = /^[A-Za-z0-9]+\.?([A-Za-z0-9]+)?@(([A-Za-z0-9]+)?\.?)*[A-Za-z0-9]+\.[A-Za-z0-9]{2,3}$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter a valid email address.");
+			document.forms["contactUs"]["Email"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateSubject(){
+		var x=document.forms["contactUs"]["Subject"].value;
+		if (x==null||x==""){
+			alert("Please enter a subject.");
+			document.forms["contactUs"]["Subject"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateMessage(){
+		var x=document.forms["contactUs"]["Message"].value;
+		if (x==null||x==""){
+			alert("Please enter your message.");
+			document.forms["contactUs"]["Message"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	
+	function validateForm(){
+		if(!validateName())return false;
+		if(!validateEmail())return false;
+		if(!validateSubject())return false;
+		if(!validateMessage())return false;
+		else{
+			return true;
+		}
+	}
+</script>
+
+</head>
+
+<body>
+
+<table width="900" align="center">
+
+<!--Header Bar-->
+	<tr style="background-color:#111;">
+		<td width="410" valign="middle">	
+			<img src="images/MMLogo.jpg" alt="Mantz Music Logo" width="400" height="80" align="left"/>
+		</td>
+        <td colspan="2">
+        	&nbsp;&nbsp;&nbsp;
+          <a href="home.html">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="onlinemixing.html">Online Mixing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="recording.html">Recording&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="clients.html">Clients&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="contact.html">Contact&nbsp;&nbsp;&nbsp;</a>
+        </td>
+	</tr>
+<!--End Header Bar-->
+
+<!-- Begin main content-->
+      <tr>
+        <td colspan="2" style="text-align:center;">
+        	<h1 style="font-size:1.5em;">Contact Us</h1>
+            <form name="contactUs" action="submitted.html" onsubmit="return validateForm()" method="get" >
+            <input name="Name" type="text" placeholder="Name" size="50" onclick="document.forms.contactUs.Name.style.backgroundColor='white'"/><br /><br />
+            <input name="Email" type="text" placeholder="Email" size="50" onclick="document.forms.contactUs.Email.style.backgroundColor='white'"/><br /><br />
+            <input name="Subject" type="text" placeholder="Subject" size="50" onclick="document.forms.contactUs.Subject.style.backgroundColor='white'"/><br /><br />
+            <textarea name="Message"  placeholder="Type your message here" cols="50" rows="10" onclick="document.forms.contactUs.Message.style.backgroundColor='white'"></textarea><br /><br />
+            <input type="reset" value="Reset"/>
+            <input type="submit" value="Submit"/>
+            </form>
+        </td>
+      </tr>
+      <tr> 
+		<td colspan="2" style="text-align:center; padding-top: 20px;">
+        <h1>Or Call/text</h1>          
+          <img src="images/PhoneIcon" width="150" height="150" alt="Call or Text" />
+
+		<h1>909-261-0416</h1>
+        </td>
+      </tr>
+	   <!--Begin Footer-->
+    <tr>
+    	<td colspan="2" style="background-color: black;">
+        <p style="text-align:center">&copy;&nbsp;Anthony Mantz 2013 909-261-0416</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

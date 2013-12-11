@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Mantz Music Message Sent</title>
+
+<link rel="stylesheet" type="text/css" href="mantzmusicstyle.css"/>
+<script type="text/javascript">
+//Collect the data submitted on the form
+	function getFormData(url){
+		var data=url.split("?");
+		var nvPairs=data[1].split("&");
+		var obj=new Object();
+		for(var i=0;i<nvPairs.length;i++) {
+			var map=nvPairs[i].split("=");
+			var name=map[0];
+			var value=map[1];
+			obj[name]=value;
+		}
+		return obj;
+	}
+</script>
+
+</head>
+
+<body>
+
+<table width="900" align="center">
+
+<!--Header Bar-->
+	<tr style="background-color:#111;">
+		<td width="410" valign="middle">	
+			<img src="images/MMLogo.jpg" alt="Mantz Music Logo" width="400" height="80" align="left" />
+		</td>
+        <td colspan="2">
+        	&nbsp;&nbsp;&nbsp;
+          <a href="home.html">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="onlinemixing.html">Online Mixing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="recording.html">Recording&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="clients.html">Clients&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="contact.html">Contact&nbsp;&nbsp;&nbsp;</a>
+        </td>
+	</tr>
+<!--End Header Bar-->
+<div class="main_content">
+  <div align="center">
+    <table width="900" border="1" cellspacing="2" cellpadding="20" align="center">
+      <tr>
+        <td>
+        <br /><br />
+        <div align="center">
+        <h1>Thank you</h1>
+        <p style="text-align: center;">The following information has been submitted.</p><br /><br />
+        <div class="review">
+		<script type="text/javascript">
+			var $_GET=getFormData(location.href);
+			for(var name in $_GET){
+				document.write(name+": "+decodeURIComponent($_GET[name].replace(/[+]/g, " "))+"<br />");
+			}
+		</script>
+        </div>
+        <br /><br />
+
+
+        <a href="home.html"><img src="images/GiantNeve.jpg" width="400" height="300" alt="Neve at Ocean Way" /></a></td>
+      </tr>
+  </table>
+  </div>
+</div>
+
+<!--Begin Footer-->
+    <table width="900" border="1" cellspacing="2" cellpadding="20" align="center">
+    <tr>
+    	<td colspan="3" style="background-color: black;">
+        <p style="text-align:center">&copy;&nbsp;Anthony Mantz 2013 909-261-0416</p>
+        </td>
+    </tr>
+  </table>
+</body>
+</html>

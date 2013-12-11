@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Anthony Mantz's Form</title>
+
+<script type="text/javascript">
+
+//Cookie retrieval function (used on this page for username validation)
+function getCookies() {
+    var cookies = {}; 
+    var all = document.cookie; 
+    if (all === "") 
+        return cookies; 
+    var list = all.split("; "); 
+    for(var i = 0; i < list.length; i++) { 
+        var cookie = list[i];
+        var p = cookie.indexOf("="); 
+        var name = cookie.substring(0,p); 
+        var value = cookie.substring(p+1); 
+        value = decodeURIComponent(value); 
+        cookies[name] = value; 
+    }
+    return cookies;
+}
+
+
+//Checks to see if username is already used
+function valUser(){
+	var un=document.forms["survey"]["uName"].value;
+	if(un==""){
+		alert("Please enter a username")
+		return false;
+	}
+	//Retrieve and cycle through all cookies
+	cookiesObj=getCookies();
+	for(var name in cookiesObj){
+		var obj=JSON.parse(cookiesObj[name]);
+		for(var name in obj){
+			var un=document.forms["survey"]["uName"].value;
+			if(obj[name]==un){
+				alert("This name is taken, please enter a new username");
+				return false;
+			}
+		}
+	}
+	return true;
+
+}
+//Begin Survey validation function section
+//Radio Buttons
+function valQ1(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question1");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 1.")
+		return false;
+	}
+	else return true;
+}
+function valQ2(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question2");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 2.")
+		return false;
+	}
+	else return true;
+}
+function valQ3(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question3");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 3.")
+		return false;
+	}
+	else return true;
+}
+
+function valQ4(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question4");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 4.")
+		return false;
+	}
+	else return true;
+}
+
+function valQ5(){
+	var isChecked=false;
+	var radios=document.getElementsByName("question5");
+	for(var i=0, radio; radio=radios[i]; i++){
+		if(radio.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 5.");
+		return false;
+	}
+	else return true;
+}
+
+function valQ6(){
+	var isChecked=false;
+	var checks=document.getElementsByName("question6");
+	for(var i=0, check; check=checks[i]; i++){
+		if(check.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 6.");
+		return false;
+	}
+	else return true;
+}
+
+function valQ7(){
+	var isChecked=false;
+	var checks=document.getElementsByName("question7");
+	for(var i=0, check; check=checks[i]; i++){
+		if(check.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 7.");
+		return false;
+	}
+	else return true;
+}
+
+function valQ8(){
+	var isChecked=false;
+	var checks=document.getElementsByName("question8");
+	for(var i=0, check; check=checks[i]; i++){
+		if(check.checked){
+			isChecked=true;
+		}
+	}
+	if(!isChecked){
+		alert("Please answer question 8.");
+		return false;
+	}
+	else return true;
+}
+
+function valQ9(){
+	var q=document.forms["survey"]["question9"].value;
+	if(q==""){
+		alert("Please answer question 9.")
+		return false;
+	}
+	return true;
+}
+function valQ10(){
+	var q=document.forms["survey"]["question10"].value;
+	if(q==""){
+		alert("Please answer question 10.")
+		return false;
+	}
+	return true;
+}
+
+//Master form validation function
+function validateForm(){ 
+	if(!valUser())return false;
+	if(!valQ1())return false;
+	if(!valQ2())return false;
+	if(!valQ3())return false;
+	if(!valQ4())return false;
+	if(!valQ5())return false;
+	if(!valQ6())return false;
+	if(!valQ7())return false;
+	if(!valQ8())return false;
+	if(!valQ9())return false;
+	if(!valQ10())return false;
+	else{
+		return true;
+	}
+}
+
+</script>
+
+</head>
+
+<body>
+<!--Begin Form Content-->
+<form name="survey" action="YourResults.html" onsubmit="return validateForm()" method="get">
+<h3>Please enter a new username:</h3>
+<input name="uName" size="50" /><br />
+<h3>Question 1</h3>
+<label>Can you see this question?</label><br />
+<input type="radio" name="question1" value="yes" />Yes<br />
+<input type="radio" name="question1" value="no" /> No<br />
+<h3>Question 2</h3>
+<label>Did you finish your survey site before today?</label><br />
+<input type="radio" name="question2" value="yes" />Yes<br />
+<input type="radio" name="question2" value="no" /> No<br />
+<h3>Question 3</h3>
+<label>This was an easy project.</label><br />
+<input type="radio" name="question3" value="true" />True<br />
+<input type="radio" name="question3" value="false" />False<br />
+<h3>Question 4</h3>
+<label>What is your favorite color?</label><br />
+<input type="radio" name="question4" value="red" />Red<br />
+<input type="radio" name="question4" value="green" />Green<br />
+<input type="radio" name="question4" value="blue" />Blue<br />
+<h3>Question 5</h3>
+<label>What is your favorite California baseball team?</label><br />
+<input type="radio" name="question5" value="Angels" />Angels<br />
+<input type="radio" name="question5" value="Dodgers" />Dodgers<br />
+<input type="radio" name="question5" value="Athletics" />Athletics<br />
+<input type="radio" name="question5" value="Giants" />Giants<br />
+<input type="radio" name="question5" value="Padres" />Padres<br />
+<h3>Question 6</h3>
+<label>Which days of the week do you have class?</label><br />
+<input type="checkbox" name="question6" value="Monday" />Monday<br />
+<input type="checkbox" name="question6" value="Tuesday" />Tuesday<br />
+<input type="checkbox" name="question6" value="Wednesday" />Wednesday<br />
+<input type="checkbox" name="question6" value="Thursday" />Thursday<br />
+<input type="checkbox" name="question6" value="Friday" />Friday<br />
+<input type="checkbox" name="question6" value="Saturday" />Saturday<br />
+<h3>Question 7</h3>
+<label>Which foods do you like to eat?</label><br />
+<input type="checkbox" name="question7" value="pizza" />Pizza<br />
+<input type="checkbox" name="question7" value="cheeseburger" />Cheeseburger<br />
+<input type="checkbox" name="question7" value="taco" />Taco<br />
+<input type="checkbox" name="question7" value="shrimp" />Shrimp<br />
+<input type="checkbox" name="question7" value="none" />None of the Above<br />
+<h3>Question 8</h3>
+<label>Which foods do you refuse to eat?</label><br />
+<input type="checkbox" name="question8" value="pizza" />Pizza<br />
+<input type="checkbox" name="question8" value="cheeseburger" />Cheeseburger<br />
+<input type="checkbox" name="question8" value="taco" />Taco<br />
+<input type="checkbox" name="question8" value="shrimp" />Shrimp<br />
+<input type="checkbox" name="question8" value="none" />None of the Above<br />
+<h3>Question 9</h3>
+<label>What city are you from?</label><br />
+<input name="question9" size="50" /><br />
+<h3>Question 10</h3>
+<label>Do you have any comments</label><br />
+<textarea name="question10" cols="50" rows="5"></textarea><br />
+<input type="submit" name="submit" value="Next" />
+</form>
+
+
+</body>
+</html>

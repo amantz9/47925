@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Mantz Music Recording</title>
+
+<link rel="stylesheet" type="text/css" href="mantzmusicstyle.css"/>
+<script type="text/javascript">
+	function validateArtistName(){
+		var x=document.forms["recording"]["ArtistName"].value;
+		var re = /^\s*[A-Za-z]+(\s[A-Za-z]*)*$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter the artist's name.");
+			document.forms["recording"]["ArtistName"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateName(){
+		var x=document.forms["recording"]["Name"].value;
+		var re = /^\s*[A-Za-z]{2,}\s+[A-Za-z]{2,}\s*$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter your first and last name.");
+			document.forms["recording"]["Name"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateEmail(){
+		var x=document.forms["recording"]["Email"].value;
+		var re = /^[A-Za-z0-9]+\.?([A-Za-z0-9]+)?@(([A-Za-z0-9]+)?\.?)*[A-Za-z0-9]+\.[A-Za-z0-9]{2,3}$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter a valid email address.");
+			document.forms["recording"]["Email"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validatePhone(){
+		var x=document.forms["recording"]["Phone"].value;
+		var re = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter your phone number in the following format:\n 999-999-9999.");
+			document.forms["recording"]["Phone"].style.backgroundColor = "#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateHours(){
+		var x=document.forms["recording"]["Hours"].value;
+		var re = /^\d{1,3}$/;
+		var m = re.exec(x);
+		if (m==null){
+			alert("Please enter the estimated number of hours for the recording session.");
+			document.forms.recording.Hours.style.backgroundColor="#FFAAAA";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	function validateRecType(){
+		if(document.forms.recording.recType.value.checked!=true){
+			alert("Please select a recording type");
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+	
+	function validateForm(){
+		if(!validateArtistName())return false;
+		if(!validateName())return false;
+		if(!validateEmail())return false;
+		if(!validatePhone())return false;
+		if(!validateHours())return false;
+		if(!validateRecType())return false;
+		else{
+			return true;
+		}
+	}
+</script>
+
+</head>
+
+<body>
+
+<table width="900" align="center">
+
+<!--Header Bar-->
+	<tr style="background-color:#111;">
+		<td width="410" valign="middle">	
+			<img src="images/MMLogo.jpg" alt="Mantz Music Logo" width="400" height="80" align="left"/>
+		</td>
+        <td colspan="2">
+        	&nbsp;&nbsp;&nbsp;
+          <a href="home.html">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="onlinemixing.html">Online Mixing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="recording.html">Recording&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="clients.html">Clients&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="contact.html">Contact&nbsp;&nbsp;&nbsp;</a>
+        </td>
+	</tr>
+<!--End Header Bar-->
+
+<!--Begin Main Content-->
+    <tr>
+        <td colspan="2"><h1>Recording</h1>
+        </td>
+   	</tr>
+    <!--Image Row H267-->
+	<tr>
+        <td colspan="2" style="background-color:#900;">
+       	  <h1><em>Have your next project engineered by an experienced professional. Anthony Mantz is available to engineer recording projects located in Southern California in the studio or on-location.</em></h1>
+       	</td>
+   	<tr>
+    	<td colspan="2">
+        <img src="images/Persuasion.jpg" width="275" height="206" alt="Persuasion in the Studio" />
+        <img src="images/AnthonyAtSSL.jpg" width="275" height="206" alt="Anthony at Studio West" />
+        <img src="images/RCCWEFest.jpg" width="275" height="206" alt="RCC Wind Ensemble" />
+        </td>
+   	</tr>
+    <!--End Image Row-->
+    
+    <!--Begin Recording Description-->
+
+    
+    <tr>
+       	<td style="padding-right: 10px; vertical-align:text-top;">
+            <p style="text-align:center;"><strong>2-Track On-Location Recording</strong></p>
+            <p>With two mics out in front of the group, this is the best option for large acoustic ensembles such as wind ensembles, orchestras, and choirs where there are general no sounds going through a PA system. This service starts at $200 and includes editing and mastering. Spot mics are available on request. Just fill out the form for a quote or to book.<p>
+            <p style="text-align:center"><strong>Multi-Track On-Location Recording</strong></p>
+            <p>This service is for groups that desire more isolation between instruments/voices, and those with a mix of acoustic and electronic sound sources. This service can used to record anywhere from a concert venue to your parent's living room. Fill out the form for a quote.</p>
+            <p style="text-align:center;"><strong>Engineering Services</strong></p>
+            <p>If you are working out of a studio that does not include an engineer in the price, Anthony is available to engineer your project in the studio. He is also available to act as a 2nd for large projects that require an extra engineer to keep the project running smoothly. Please fill out the form for a quote.</p>
+            <p>Please <a href="contact.html">contact me</a> if you have any questions.</p>
+
+    	</td>
+    <!--End Recording Description-->
+    
+    <!--Begin Payment Options-->
+    	<td style="vertical-align:top; padding: 10px; background-color:#222;">
+        	<p><strong>Recording/Engineering Quote Form</strong></p>
+            <p><em>Please fill in the form and you will be contacted with a quote for the requested services. You may be asked for additional information before receiving the quote.</em></p>
+        	<br /><br />
+	<!--Online Mixing Form Goes Here-->
+    	<table align="center">
+        	<tr><td colspan="2">
+            <form name="recording" action="recthankyou.html" onsubmit="return validateForm()" method="get" >
+            <input type="text" name="ArtistName" placeholder="Artist Name" size="50" onclick="document.forms.recording.ArtistName.style.backgroundColor='white'"/><br /><br />
+        	<input type="text" name="Name" placeholder="Contact Name" size="50" onclick="document.forms.recording.Name.style.backgroundColor='white'"/><br /><br />
+            <input type="text" name="Email" placeholder="Email" size="50" onclick="document.forms.recording.Email.style.backgroundColor='white'"/><br /><br />
+            <input type="text" name="Phone" placeholder="Phone" size="50" onclick="document.forms.recording.Phone.style.backgroundColor='white'" /><br /><br />
+            <input type="text" name="Hours" placeholder="Estimated Hours of Session" size="50"  onclick="document.forms.recording.Hours.style.backgroundColor='white'"/><br />
+            
+            <tr><td style="text-align:left;">
+            <p><strong>Recording Type</strong></p>
+            <input type="radio" name="recType" value="2track"/>2-Track Location<br />
+            <input type="radio" name="recType" value="mtloc"/>Multi-track Location<br />
+            <input type="radio" name="recType" value="engineering"/>Engineering<br />
+            </td>
+            <td>
+			<br />
+            <textarea name="details" rows="7" cols="25" placeholder="Brief description of project" ></textarea>
+            </td>
+            </tr>
+			<tr>
+			<td colspan="2" style="text-align:center;">
+				<br />
+				<input type="reset" value="reset"/>
+				<input type="submit" value="submit"/>
+			</td>
+			</tr>
+        </form>
+        </table>
+    <!--End Online Mixing Form-->
+    <br />
+	<!-- PayPal Logo -->
+        <table border="0" cellpadding="10" cellspacing="0" align="center">
+        	<tr>
+            	<td align="center">
+                </td>
+           	</tr>
+            <tr>
+            	<td align="center"><a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark"></a>
+                </td>
+           	</tr>
+     	</table>
+ 	<!-- End PayPal Logo -->
+
+        </td>
+    <!--End Payment Options-->
+  	</tr>
+<!--End Main Content-->
+    
+ <!--Begin Footer-->
+    <tr>
+    	<td colspan="3" style="background-color: black;">
+        <p style="text-align:center">&copy;&nbsp;Anthony Mantz 2013 909-261-0416</p>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
